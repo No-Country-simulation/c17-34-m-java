@@ -10,17 +10,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class QrController {
 
     @GetMapping("/get/{archName}")
     public ResponseEntity<?> testPoint(@PathVariable String archName) throws IOException, WriterException {
-        Boolean response = QrGeneration.generateQr(archName+".png",200, 200);
-        if (response) {
+        File response = QrGeneration.generateQr(archName+".png","jaja",200, 200);
+        if (response.exists()) {
             System.out.println("salio bien");
             return new ResponseEntity<>("todo ok", HttpStatus.OK);
         }
