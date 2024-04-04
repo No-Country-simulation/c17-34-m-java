@@ -1,6 +1,6 @@
 package com.c174.dto;
 
-import com.c174.models.Ticket.Ticket;
+import com.c174.models.Ticket;
 
 public record TicketResponse(String event,
                              Long id,
@@ -8,6 +8,6 @@ public record TicketResponse(String event,
 
 
     public TicketResponse(Ticket ticket){
-        this(ticket.getEvent(), ticket.getId(), ticket.getQr());
+        this(ticket.getEventName(), ticket.getId(), ticket.getQr());
     }
 }

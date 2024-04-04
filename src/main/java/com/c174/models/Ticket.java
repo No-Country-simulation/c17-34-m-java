@@ -1,7 +1,9 @@
-package com.c174.models.Ticket;
+package com.c174.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,7 +14,6 @@ import lombok.*;
 @Entity
 @Table(name = "tickets")
 public class Ticket {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,9 +21,12 @@ public class Ticket {
     private String qr;
     @Column(name = "is_present")
     private Boolean isPresent;
-    @Column(name = "its_lock")
-    private Boolean itsLock;
-    @Column(name = "event")
-    private String event;
-
+    @Column(name = "is_locked")
+    private Boolean isLocked;
+    @Column(name = "event_name")
+    private String eventName;
+    @Column(name = "creation_Date")
+    private LocalDateTime creationDate;
+    @Column(name = "event_date")
+    private LocalDateTime eventDate;
 }

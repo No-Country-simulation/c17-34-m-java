@@ -1,4 +1,6 @@
 package com.c174.dto;
+import com.c174.models.Ticket;
+import jakarta.persistence.Column;
 import lombok.*;
 import java.time.LocalDateTime;
 
@@ -7,7 +9,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TicketDTO {
-    private String id;
+    private Long id;
+    private String qr;
+    private Boolean isPresent;
+    private Boolean isLocked;
     private String eventName;
-    private Boolean available;
+    private LocalDateTime creationDate;
+    private LocalDateTime eventDate;
+
 }

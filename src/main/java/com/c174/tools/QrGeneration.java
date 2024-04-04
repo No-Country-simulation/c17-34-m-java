@@ -1,18 +1,16 @@
 package com.c174.tools;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
+import com.google.zxing.*;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
+import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Base64;
@@ -22,7 +20,7 @@ import java.util.UUID;
 
 public class QrGeneration {
 
-    private static String charset = "UTF-8";
+    private final static String charset = "UTF-8";
 
     /**
      *
@@ -35,10 +33,19 @@ public class QrGeneration {
     public static String returnBase64(File file) throws IOException {
         InputStream inputFile = new FileInputStream(file);
         byte[] fileContent = inputFile.readAllBytes();
-        inputFile.read(fileContent);
         inputFile.close();
         return Base64.getEncoder().encodeToString(fileContent);
     }
+
+    public static String decodeQR(File file) throws IOException, NotFoundException {
+        BufferedImage bufferedImage = ImageIO.read(file);
+        LuminanceSource source = new BufferedImageLuminanceSource(bufferedImage);
+        BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+
+        Result result = new MultiFormatReader().decode(bitmap);
+        return result.getText();
+    }
+
     /**
      *
      * @param path
@@ -53,12 +60,8 @@ public class QrGeneration {
      * a apartir de un path ( uri ) y 2 medidas de tamaño
      * alto y ancho
      */
-    public static Boolean generateQr(String path,
-                                    int height, int width)
+    public static File generateQr(String path, String chain, int height, int width)
             throws IOException, WriterException {
-
-        UUID uuid = UUID.randomUUID();
-        String chain = uuid.toString();
 
         Map<EncodeHintType, ErrorCorrectionLevel> map = new HashMap<>();
 
@@ -74,7 +77,7 @@ public class QrGeneration {
                 new File(path)
         );
 
-        return Files.exists(Path.of(path));
+        return new File(path);
     }
 
     /**
@@ -107,7 +110,7 @@ public class QrGeneration {
      * si lo logra retorna verdadedora de lo contrario
      * retorna falso
      */
-    public static Boolean deleteQr(String image) throws URISyntaxException {
+    public static Boolean deleteQr(String image){
 
         File file = new File(image);
 
