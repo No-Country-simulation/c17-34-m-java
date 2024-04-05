@@ -23,6 +23,14 @@ import java.util.*;
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
     private final ModelMapper modelMapper;
+
+    /**
+     * Este metodo crea un registro en una base de datos postgre
+     * mediante una instancia de jpa repository
+     *
+     * @param ticketDTO informacion a persistir
+     * @return la informacion persistida
+     */
     @Override
     public TicketDTO create(TicketDTO ticketDTO) {
         LocalDateTime currentDateTime = LocalDateTime.now();
@@ -48,6 +56,14 @@ public class TicketServiceImpl implements TicketService {
 
         return modelMapper.map(ticket, TicketDTO.class);
     }
+
+    /**
+     * MOdifica un registro de un ticket con nueva informacion
+     *
+     * @param id primary key para buscar el registro
+     * @param ticketDTO nueva informacion
+     * @return infomacion actualizada
+     */
     @Override
     public TicketDTO update(Long id, TicketDTO ticketDTO) {
         Optional<Ticket> ticketOptional = ticketRepository.findById(id);
@@ -59,6 +75,13 @@ public class TicketServiceImpl implements TicketService {
         }
         return null;
     }
+
+    /**
+     * Localiza y da una baja logica a un registro de un ticket
+     *
+     * @param id primary key para buscar el registro
+     * @return informacion dada de baja
+     */
     @Override
     public TicketDTO disable(Long id) {
         Optional<Ticket> ticketOptional = ticketRepository.findById(id);
@@ -70,6 +93,14 @@ public class TicketServiceImpl implements TicketService {
         }
         return null;
     }
+
+    /**
+     * Metodo por el cual se bloquea un ticket que no va a poder entrar
+     * en una transaccion
+     *
+     * @param id primary key para encontrar el registro del ticket
+     * @return eñ toclet blequeado
+     */
     @Override
     public TicketDTO lockTicket(Long id) {
         Optional<Ticket> ticketOptional = ticketRepository.findById(id);
@@ -81,6 +112,15 @@ public class TicketServiceImpl implements TicketService {
         }
         return null;
     }
+
+    /**
+     * Chequea el estado del ticket, si es real a partir de un archivo
+     * de imagen ademas si es que no esta bloqueado en nuestro sistema
+     *
+     * @param file imagen a analizar
+     * @return informacion del ticket si es que existe, de lo contrario retorna datos nulos
+     * @throws IOException excepcion relacionada con el manejo de el archivo
+     */
     @Override
     public TicketDTO checkTicket(File file) throws IOException {
         String data = null;
@@ -96,6 +136,14 @@ public class TicketServiceImpl implements TicketService {
         return null;
     }
 
+    /**
+     * Con este motodo moddificamos la imagen del ticket
+     * generamos nueva infomacion aleatoria
+     * a partir de una imagen valida
+     * @param file Archivo idealmente valido ( de lo contrario retorna nulo)
+     * @return informacion actualizada del ticket
+     * @throws IOException excepcion relacionada con el manejo de imagenes
+     */
     @Override
     public TicketDTO renewQr(File file) throws IOException {
         String data = null;
@@ -125,6 +173,10 @@ public class TicketServiceImpl implements TicketService {
         return null;
     }
 
+    /**
+     * Metodo que busca y retorna una lista de tickets dados de baja
+     * @return listado de tickets
+     */
     @Override
     public List<TicketDTO> findDisabledTickets() {
         List<Ticket> tickets = ticketRepository.findDisabledTickets();
@@ -132,6 +184,11 @@ public class TicketServiceImpl implements TicketService {
                 .map(ticket -> modelMapper.map(ticket, TicketDTO.class))
                 .toList();
     }
+
+    /**
+     * Metodo que busca y retorna una lista de tickets validos(alta)
+     * @return listado de tickets
+     */
     @Override
     public List<TicketDTO> findAllAvailableTickets() {
         List<Ticket> tickets = ticketRepository.findAllAvailableTickets();
@@ -139,6 +196,11 @@ public class TicketServiceImpl implements TicketService {
                 .map(ticket -> modelMapper.map(ticket, TicketDTO.class))
                 .toList();
     }
+
+    /**
+     * Metodo que busca y retorna una lista de tickets bloqueados
+     * @return listado de tickets
+     */
     @Override
     public List<TicketDTO> findAllLockedTickets() {
         List<Ticket> tickets = ticketRepository.findAllLockedTickets();
@@ -146,6 +208,12 @@ public class TicketServiceImpl implements TicketService {
                 .map(ticket -> modelMapper.map(ticket, TicketDTO.class))
                 .toList();
     }
+
+    /**
+     * MEtodo que retorna todos los tickets que pertenescan a un evento especifico
+     * @param eventName cadona de caracteres(nombre del evento)
+     * @return listado de tickets que pertenecen a este evento
+     */
     @Override
     public List<TicketDTO> findTicketsByEvent(String eventName) {
         List<Ticket> tickets = ticketRepository.findTicketsByEvent(eventName);
