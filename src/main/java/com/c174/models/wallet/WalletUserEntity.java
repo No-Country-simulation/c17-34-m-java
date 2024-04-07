@@ -13,7 +13,6 @@ import java.util.List;
 @Table(name="wallet_user")
 @Data
 public class WalletUserEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,8 +27,8 @@ public class WalletUserEntity {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
     @JoinColumn(name = "wallet_seller_id")
     private List<TransactionEntity> sales;
-
     @Embedded
     private Audit audit = new Audit();
+    private Boolean isPresent;
 
 }

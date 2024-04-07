@@ -1,20 +1,20 @@
 package com.c174.models.user;
 
+import com.c174.models.embed.Audit;
 import com.c174.models.profile.ProfileResponse;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Email;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserResponse {
     private Long id;
-    private String mail;
+    @Column(unique = true)
+    @Email
+    private String email;
     private ProfileResponse profile;
-
-    public UserResponse(UserEntity userEntity) {
-        this.id = userEntity.getId();
-        this.mail = userEntity.getEmail();
-        this.profile = new ProfileResponse(userEntity.getProfile());
-    }
-
+    private Audit audit;
 }

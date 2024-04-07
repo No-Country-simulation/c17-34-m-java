@@ -20,4 +20,4 @@
 
 ## Swagger
 - The swagger documentation can be accessed at the following URL
-  - http://localhost:8080/api/v1/dubdrop/swagger-ui.html
+  - http://localhost:8080/api/v1/dubdrop/swagger-ui/index.html

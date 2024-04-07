@@ -10,7 +10,7 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Table(name="Transaccion")
+@Table(name="transactions")
 @Data
 public class TransactionEntity {
     @Id
@@ -30,4 +30,5 @@ public class TransactionEntity {
     private StateTransaction stateTransaction;
     @Embedded
     private Audit audit = new Audit();
+    private Boolean isPresent;
 }

@@ -24,7 +24,7 @@ public class ProfileEntity{
     private String lastname;
     private String name;
     private String document;
-    private boolean isPresent;
+    private Boolean isPresent;
     @OneToOne(fetch = FetchType.LAZY)
     private UserEntity user;
     @Embedded
@@ -36,5 +36,10 @@ public class ProfileEntity{
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "wallet_id")
     private WalletUserEntity walletUser;
+
+    @PrePersist
+    public void prePersist() {
+        this.isPresent = Boolean.TRUE;
+    }
 
 }

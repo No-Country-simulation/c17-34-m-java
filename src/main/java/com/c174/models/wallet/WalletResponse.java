@@ -6,12 +6,14 @@ import com.c174.models.transaction.TransactionResponse;
 import com.c174.models.profile.ProfileResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class WalletResponse {
     private Long id;
     private ProfileResponse profile;
@@ -23,7 +25,6 @@ public class WalletResponse {
 
     public WalletResponse(WalletUserEntity walletEntity) {
         this.id = walletEntity.getId();
-        this.profile = new ProfileResponse(walletEntity.getProfile());
         this.balance = walletEntity.getBalance();
         this.stateAccount = walletEntity.getStateAccount();
         this.purchases = walletEntity.getPurchases().stream()

@@ -3,6 +3,7 @@ package com.c174.controllers;
 import com.c174.models.transaction.TransactionRequest;
 import com.c174.models.transaction.TransactionResponse;
 import com.c174.services.abstraccion.TransactionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transaction")
+@Tag(name = "Transaction", description = "Transaction API")
 public class TransactionController {
 
     @Autowired

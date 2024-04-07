@@ -1,24 +1,22 @@
 package com.c174.models.profile;
 
+import com.c174.models.ticket.TicketEntity;
+import com.c174.models.ticket.TicketResponse;
 import com.c174.models.user.UserResponse;
-import lombok.Data;
+import lombok.*;
 
-@Data
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProfileResponse {
-
     private Long id;
     private String lastname;
     private String name;
     private String document;
-    private boolean isPresent;
     private UserResponse user;
+    private List<TicketResponse> tickets;
 
-    public ProfileResponse(ProfileEntity profileEntity) {
-        this.id = profileEntity.getId();
-        this.lastname = profileEntity.getLastname();
-        this.name = profileEntity.getName();
-        this.document = profileEntity.getDocument();
-        this.isPresent = profileEntity.isPresent();
-        this.user = new UserResponse(profileEntity.getUser().getId(), profileEntity.getUser().getEmail(),null);
-    }
 }

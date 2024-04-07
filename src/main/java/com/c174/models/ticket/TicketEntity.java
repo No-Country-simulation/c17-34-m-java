@@ -1,6 +1,6 @@
 package com.c174.models.ticket;
 
-import com.c174.models.category.CategoryEntity;
+import com.c174.models.event.EventEntity;
 import com.c174.models.embed.Audit;
 import com.c174.models.transaction.TransactionEntity;
 import com.c174.models.profile.ProfileEntity;
@@ -18,22 +18,27 @@ public class TicketEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String meta;
-    @ManyToMany(
-            mappedBy = "tickets",
-            fetch = FetchType.LAZY
+    @ManyToOne(
+            cascade = {CascadeType.MERGE}
     )
-    private List<CategoryEntity> categories;
+    @JoinColumn(name = "event_id")
+    private EventEntity event;
     @Embedded
     private Audit audit;
     @ManyToOne(
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+            cascade = {CascadeType.MERGE}
     )
     @JoinColumn(name = "transaction_id")
     private TransactionEntity transaction;
     @ManyToOne(
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+            cascade = {CascadeType.MERGE}
     )
     @JoinColumn(name = "profile_id")
     private ProfileEntity owner;
+    private Boolean isPresent;
 
+    @PrePersist
+    public void prePersist() {
+        this.isPresent = Boolean.TRUE;
+    }
 }
