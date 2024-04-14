@@ -1,0 +1,74 @@
+@media (width <= 480px) {
+  .tickets-container {
+    display: flex;
+    justify-content: center;
+  }
+  .tickets {
+    width: 90%;
+  }
+  .ticket {
+    margin-top: 3.077vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  .ticket .header-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.513vw;
+  }
+  .ticket .header-info p {
+    font-size: 4.103vw;
+    font-weight: 400;
+    color: #000000;
+  }
+  .ticket .header-info span {
+    font-size: 11px;
+    font-weight: 400;
+    color: #6a6a6a;
+  }
+  .ticket h1 {
+    font-size: 6.667vw;
+  }
+  .ticket .bottom-info {
+    margin-bottom: 3.077vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ticket .bottom-info h2 {
+    font-size: 5.897vw;
+  }
+  .ticket .bottom-info h2 span {
+    font-size: 3.59vw;
+    font-weight: 300;
+    color: #6a6a6a;
+  }
+
+  .ticket .bottom-info .purchase-ticket-button {
+    font-size: 3.59vw;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #26a84e;
+    color: white;
+    font-weight: 400;
+  }
+  .ticket .bottom-info .sale-ticket-button {
+    font-size: 3.59vw;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #CA4064;
+    color: white;
+    font-weight: 400;
+  }
+  .background-ticket-navigator{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, #FFF 132.88%);
+  }
+}

@@ -1,10 +1,15 @@
-import React from 'react'
-
+import React from "react";
+import "./home.css";
+import Events from "../../components/Events/Events";
+import Search from "../../components/Search/Search";
+import MainMobileNavbar from "./../../components/Layout/Mobile/MainNavbar/MainMobileNavbar";
 const Home = () => {
   return (
     <>
-      <h1>Troca App</h1>
+      <Search />
+      <Events />
+      <MainMobileNavbar />
     </>
-  )
-}
-export default Home
+  );
+};
+export default Home;

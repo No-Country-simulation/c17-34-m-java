@@ -1,0 +1,39 @@
+@media (width <= 480px) {
+  .ticket-trade-header {
+    background-color: #d9d9d9;
+  }
+  .ticket-trade-header div {
+    padding: 8.205vw 0 0 6.923vw;
+  }
+  .ticket-trade-header h1 {
+    padding: 6.923vw 0 13.59vw 0;
+    text-align: center;
+    font-size: 4.103vw;
+    font-weight: 400;
+    line-height: 137.5%;
+    letter-spacing: -0.408px;
+  }
+  .sale-purchase-menu {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  .sale-purchase-menu ul {
+    width: 90%;
+    margin-top: 6.154vw;
+    margin-bottom: 3.077vw;
+    display: flex;
+    justify-content: flex-start;
+    gap: 4.103vw;
+    list-style-type: none;
+  }
+  .sale-purchase-menu li a {
+    font-size: 5.897vw;
+    text-decoration: none;
+    color: #a4a4a4;
+    font-weight: 700;
+  }
+  .sale-purchase-menu li a.active{
+    color: black;
+  }
+}

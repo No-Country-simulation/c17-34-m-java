@@ -1,0 +1,57 @@
+@media (width <= 480px) {
+  .user-profile-view.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #D9D9D9;;
+  }
+  .user-profile-view.content {
+    width: 90%;
+  }
+  .user-profile-view.content-header {
+    margin-top: 8.205vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .user-profile-view.content-header a {
+    text-decoration: none;
+    color: black;
+  }
+  .user-profile-view.content-bottom {
+    margin-top: 5.128vw;
+  }
+  .user-profile-view.content-bottom img {
+    border-radius: 50%;
+  }
+  .user-profile-view.content-bottom .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .user-profile-view.content-bottom .user-info div {
+    display: flex;
+    align-items: center;
+    gap: 1.026vw;
+  }
+  .user-profile-view.content-bottom .user-info .email-info {
+    color: #26a84e;
+    font-size: 3.59vw;
+    font-weight: 400;
+  }
+  .user-profile-view.content-bottom .user-info .mp-info {
+    color: #4EC8FF;
+    font-size: 3.59vw;
+    font-weight: 400;
+  }
+  .user-profile-view.content-bottom a{
+    display: inline-block;
+    width: fit-content;
+    margin: 4.103vw 0;
+    text-decoration: none;
+    padding: 1.538vw 7.949vw;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+  }
+}
