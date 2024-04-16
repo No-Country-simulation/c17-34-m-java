@@ -31,4 +31,8 @@
   .mobile-ticket-navigator ul li a.active-link-p2p{
     color: #BCFF2F;
   }
+  .mobile-ticket-navigator ul li a[disabled]{
+    pointer-events: none;
+    color: grey;
+  }
 }

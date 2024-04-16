@@ -54,6 +54,9 @@
     text-decoration: none;
     color: #8B8B8B;
   }
+  .mobile-header-content .p2p-link{
+    color: #ffffff;
+  }
   .mobile-main-content li a.active-link-wallet{
     color: white;
   }

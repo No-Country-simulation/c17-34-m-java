@@ -3,8 +3,11 @@ import "./userRating.css";
 import { ThumbsUpIcon } from "./../../Icons/Basic/ThumbsUpIcon";
 import { ThumbsDownIcon } from "./../../Icons/Basic/ThumbsDownIcon";
 const UserRating = () => {
-  const rating1 = 60;
-  const rating2 = 40;
+  const initalValue = 25;
+  const positiveRating = 95.6;
+  const negativeRating = 4.4;
+  const rating1 = initalValue + positiveRating;
+  const rating2 = initalValue + negativeRating;
   return (
     <div className="user-rating-container">
       <div className="user-rating">
@@ -12,10 +15,10 @@ const UserRating = () => {
         <div className="rating-bars">
           <ThumbsUpIcon width="22px" height="22px" className="thumbs-up"/>
           <div className="positive-rating" style={{ width: `${rating1}%` }}>
-            <p>{rating1}%</p>
+            <p>{positiveRating}%</p>
           </div>
           <div className="negative-rating" style={{ width: `${rating2}%` }}>
-            <p>{rating2}%</p>
+            <p>{negativeRating}%</p>
           </div>
           <ThumbsDownIcon width="22px" height="22px" className="thumbs-down"/>
         </div>

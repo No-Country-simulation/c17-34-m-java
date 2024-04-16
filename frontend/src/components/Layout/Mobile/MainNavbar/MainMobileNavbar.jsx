@@ -13,14 +13,14 @@ const MainMobileNavbar = () => {
     <div className="mobile-navbar-container">
       <div className="mobile-header-content">
         <div>
-          <NavLink to="/tickets/purchase">
+          <NavLink to="/tickets/purchase" className="p2p-link">
             <UsersIcon />
           </NavLink>
         </div>
       </div>
       <ul className="mobile-main-content">
         <li>
-          <NavLink to="/">
+          <NavLink to="/" >
             <HomeIcon />
             <span>Home</span>
           </NavLink>

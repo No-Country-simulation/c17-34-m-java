@@ -25,7 +25,7 @@ const TicketNavigator = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/">
+          <NavLink to="/" disabled>
             <CommentIcon width="24px" height="24px" />
             <span>Chats</span>
           </NavLink>
