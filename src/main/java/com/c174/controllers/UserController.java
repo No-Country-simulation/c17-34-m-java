@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @Operation(summary = "Get User by Id")
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id) throws EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
 

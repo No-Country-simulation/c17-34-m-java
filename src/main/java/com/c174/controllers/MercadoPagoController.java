@@ -1,28 +1,24 @@
 package com.c174.controllers;
 
-import com.mercadopago.client.preference.PreferenceRequest;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.c174.services.abstraccion.MpUserService;
+import org.springframework.web.bind.annotation.*;
 
-@RestController("/mp")
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/mp")
+@CrossOrigin("*") //TODO: cambiarlo por el dominio de la app
 public class MercadoPagoController{
-    @Value("${mercadopago.client_id}")
-    private String clientId;
-    @Value("${mercadopago.client_secret}")
-    private String clientSecret;
+    private MpUserService mpUserService;
 
-//    @PostMapping("/createPreference")
-//    public void createPreference(@Valid @RequestBody PreferenceRequest preferenceRequest) {
-//        MercadoPag
-//        // Create preference
-//    }
-//
-//    @PostMapping("/notification")
-//    public void notification() {
-//        // Notification
-//    }
+    public MercadoPagoController(MpUserService mpUserService) {
+        this.mpUserService = mpUserService;
+    }
+
+    @GetMapping("/oauth")
+    public void createCredential(@RequestParam String code, @RequestParam UUID state) {
+        mpUserService.createAuth(code, state);
+    }
+
 
 }

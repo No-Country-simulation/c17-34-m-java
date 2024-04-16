@@ -66,7 +66,7 @@ public class TicketController {
     }
 
     @Operation(summary = "Get ticket by ID")
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id) throws EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
         TicketResponse response = ticketService.getById(id);

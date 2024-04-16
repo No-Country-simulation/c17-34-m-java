@@ -24,11 +24,11 @@ INSERT INTO transactions(profile_buyer_id, profile_seller_id, state_transaction,
 INSERT INTO transactions(profile_buyer_id, profile_seller_id, state_transaction, create_at, is_present) VALUES ( 4, 5, 'PENDING', CURRENT_TIMESTAMP,TRUE);
 INSERT INTO transactions(profile_buyer_id, profile_seller_id, state_transaction, create_at, is_present) VALUES ( 2, 5, 'PENDING', CURRENT_TIMESTAMP,TRUE);
 --- Insertar datos en la tabla tickets
-INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present) VALUES ( 'Meta 1', CURRENT_TIMESTAMP, 1, 1, 1,TRUE);
-INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present) VALUES ( 'Meta 2', CURRENT_TIMESTAMP, 2, 2, 1,TRUE);
-INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present) VALUES ( 'Meta 3', CURRENT_TIMESTAMP, 3, 3, 1,TRUE);
-INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present) VALUES ( 'Meta 4', CURRENT_TIMESTAMP, 4, 4, 2 ,TRUE);
-INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present) VALUES ( 'Meta 5', CURRENT_TIMESTAMP, 5, 2, 3,TRUE);
+INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 1', CURRENT_TIMESTAMP, 1, 1, 1,TRUE, 10000.00);
+INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 2', CURRENT_TIMESTAMP, 2, 2, 1,TRUE, 10000.00);
+INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 3', CURRENT_TIMESTAMP, 3, 3, 1,TRUE, 10000.00);
+INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 4', CURRENT_TIMESTAMP, 4, 4, 2 ,TRUE, 10000.00);
+INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 5', CURRENT_TIMESTAMP, 5, 2, 3,TRUE, 10000.00);
 --- Insertar datos en la tabla data_bank
 INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 1, '123456', 'Ahorros', 'Banco de Bogotá', CURRENT_TIMESTAMP);
 INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 2, '123456', 'Ahorros', 'Banco de Bogotá', CURRENT_TIMESTAMP);

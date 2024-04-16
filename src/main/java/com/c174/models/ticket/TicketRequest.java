@@ -19,4 +19,6 @@ public class TicketRequest {
     private EventRequest event;
     private Audit audit;
     private ProfileRequest owner;
+
+    private Double price;
 }

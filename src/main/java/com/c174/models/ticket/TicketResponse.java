@@ -21,4 +21,6 @@ public class TicketResponse {
     private EventResponse event;
     private Audit audit;
     private ProfileResponse owner;
+
+    private Double price;
 }

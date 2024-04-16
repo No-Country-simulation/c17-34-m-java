@@ -1,6 +1,7 @@
 package com.c174.models.user;
 
 import com.c174.models.embed.Audit;
+import com.c174.models.mpuser.CredentialMPUser;
 import com.c174.models.profile.ProfileEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -33,6 +34,8 @@ public class UserEntity implements Serializable {
     public void prePersist() {
         this.isPresent = Boolean.TRUE;
     }
+
+
 }
 
 

@@ -2,6 +2,7 @@ package com.c174.models.profile;
 
 import com.c174.models.embed.Audit;
 import com.c174.models.databank.DataBankEntity;
+import com.c174.models.mpuser.CredentialMPUser;
 import com.c174.models.wallet.WalletUserEntity;
 import com.c174.models.ticket.TicketEntity;
 import com.c174.models.user.UserEntity;
@@ -36,10 +37,14 @@ public class ProfileEntity{
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "wallet_id")
     private WalletUserEntity walletUser;
+    @OneToOne(mappedBy = "profile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private CredentialMPUser credentialMPUser;
 
     @PrePersist
     public void prePersist() {
         this.isPresent = Boolean.TRUE;
     }
+
+
 
 }

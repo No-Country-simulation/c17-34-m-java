@@ -46,7 +46,7 @@ public class EventController {
     }
 
     @Operation(summary = "Get event by id, if this include in the id return the event")
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<?> getById( @PathVariable Long id) throws EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
 
@@ -70,7 +70,7 @@ public class EventController {
     }
 
     @Operation(summary = "Delete a event - only admin")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<?> deleteEvent(@PathVariable Long id) throws EntityDeleteException, EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
 
@@ -81,7 +81,7 @@ public class EventController {
     }
 
     @Operation(summary = "Update a event - only admin")
-    @PatchMapping("/{id}")
+    @PatchMapping("/id/{id}")
     public ResponseEntity<?> updateEvent(@PathVariable Long id, @RequestBody @Valid Optional<EventRequest> event) throws EntityUploadException, EntityNotFoundException, NoBodyException {
         Map<String, Object> bodyResponse = new HashMap<>();
 

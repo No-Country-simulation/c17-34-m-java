@@ -1,6 +1,7 @@
 package com.c174.services.implementation;
 import com.c174.exception.*;
 import com.c174.models.embed.Audit;
+import com.c174.models.mpuser.CredentialMPUser;
 import com.c174.models.profile.ProfileEntity;
 import com.c174.models.profile.ProfileMapper;
 import com.c174.models.profile.ProfileRequest;
@@ -12,21 +13,23 @@ import com.c174.models.ticket.TicketResponse;
 import com.c174.repositorys.ProfileRepository;
 import com.c174.repositorys.TicketRepository;
 import com.c174.services.abstraccion.ProfileService;
-import com.c174.services.abstraccion.TicketService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProfileServiceImplements implements ProfileService {
-
+    @Value("${mercadopago.base_url_auth}")
+    private String base_url_auth;
     private ProfileRepository profileRepository;
-
     private TicketRepository ticketRepository;
     private final ProfileMapper profileMapper;
     private final TicketMapper ticketMapper;
-    public ProfileServiceImplements(ProfileRepository profileRepository, TicketRepository ticketRepository, ProfileMapper profileMapper, TicketMapper ticketMapper) {
+    public ProfileServiceImplements(ProfileRepository profileRepository, TicketRepository ticketRepository,  ProfileMapper profileMapper, TicketMapper ticketMapper) {
         this.profileRepository = profileRepository;
         this.ticketRepository = ticketRepository;
         this.profileMapper = profileMapper;
@@ -110,7 +113,34 @@ public class ProfileServiceImplements implements ProfileService {
         profileEntity.getTickets().add(savedTicket);
         savedTicket.setOwner(profileEntity);
 
+        generateCredentialMP(profileEntity); // implementar metodo donde corresponda para generar credenciales de mp
         return ticketMapper.toTicketResponse(savedTicket);
-
     }
+
+
+
+
+
+    //se crea un dato para la credencial de mp vinculado con el perfil, todo vacio menos random uuid y profile_id
+    private  void generateCredentialMP( ProfileEntity profileEntity) {
+        CredentialMPUser credentialMPUser = new CredentialMPUser();
+        credentialMPUser.setId( UUID.randomUUID());
+        credentialMPUser.setProfile(profileEntity);
+        profileEntity.setCredentialMPUser(credentialMPUser);
+        profileRepository.save(profileEntity);
+    }
+
+    public String getUrlAuthMP(Long id) throws EntityNotFoundException {
+        if(!profileRepository.existsById(id) ||
+                profileRepository.findById(id).get().getIsPresent() == Boolean.FALSE){
+            throw new EntityNotFoundException("Profile not found or already deleted");
+        }
+        ProfileEntity profileEntity = profileRepository.findById(id).orElse(null);
+        String uuidRandom = profileEntity.getCredentialMPUser().getId().toString();
+
+        String url = base_url_auth+uuidRandom;
+        return url;
+    }
+
+
 }

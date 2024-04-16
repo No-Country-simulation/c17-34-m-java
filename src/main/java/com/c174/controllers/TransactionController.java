@@ -18,7 +18,7 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<TransactionResponse> getTransactionById(@PathVariable Long id){
         return ResponseEntity.ok(transactionService.getTransactionById(id));
     }
@@ -33,7 +33,7 @@ public class TransactionController {
         return ResponseEntity.ok(transactionService.saveTransaction(transaction));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/id/{id}")
     public ResponseEntity<String> deleteTransaction(@PathVariable Long id){
         return ResponseEntity.ok(transactionService.deleteTransaction(id));
     }

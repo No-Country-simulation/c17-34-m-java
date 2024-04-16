@@ -37,6 +37,8 @@ public class TicketEntity{
     private ProfileEntity owner;
     private Boolean isPresent;
 
+    private Double price;
+
     @PrePersist
     public void prePersist() {
         this.isPresent = Boolean.TRUE;
