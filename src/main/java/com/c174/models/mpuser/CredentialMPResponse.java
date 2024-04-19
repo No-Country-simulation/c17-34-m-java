@@ -1,5 +1,6 @@
 package com.c174.models.mpuser;
 
+import com.c174.models.user.UserResponse;
 import lombok.Data;
 import org.antlr.v4.runtime.Token;
 
@@ -15,4 +16,5 @@ public class CredentialMPResponse {
     String token_type;
     Long expires_in;
     String scope;
+    UserResponse user;
 }

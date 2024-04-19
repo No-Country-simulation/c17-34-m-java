@@ -15,6 +15,8 @@ public interface ProfileRepository extends JpaRepository<ProfileEntity, Long> {
     @Query("UPDATE  ProfileEntity e SET e.isPresent = ?2 where e.id = ?1")
     void updateIsPresent(Long id, Boolean isPresent);
 
+    @Query("SELECT e FROM ProfileEntity e WHERE e.user.id = ?1")
+    ProfileEntity findByUserId(Long userId);
 
 
 }

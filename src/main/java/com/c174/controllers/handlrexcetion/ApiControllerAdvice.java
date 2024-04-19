@@ -5,7 +5,6 @@ import com.c174.models.ExceptionDto;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +33,6 @@ public class ApiControllerAdvice {
         detalle.put("error", ex.getMessage());
 
         return new ExceptionDto(HttpStatus.NOT_FOUND.value(),"No se encontraron datos", detalle, Boolean.FALSE);
-
     }
 
     @ExceptionHandler(EntityExistsException.class)
@@ -44,7 +42,6 @@ public class ApiControllerAdvice {
         HashMap<String, Object> detalle = new HashMap<>();
         detalle.put("error", ex.getMessage());
         return new ExceptionDto(HttpStatus.BAD_REQUEST.value(),"Ya existe esa entidad", detalle, Boolean.FALSE);
-
     }
 
     @ExceptionHandler(EntityDeleteException.class)

@@ -12,6 +12,7 @@ import com.c174.models.ticket.TicketRequest;
 import com.c174.models.ticket.TicketResponse;
 import com.c174.repositorys.ProfileRepository;
 import com.c174.repositorys.TicketRepository;
+import com.c174.repositorys.UserRepository;
 import com.c174.services.abstraccion.ProfileService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -117,26 +118,25 @@ public class ProfileServiceImplements implements ProfileService {
         return ticketMapper.toTicketResponse(savedTicket);
     }
 
-
-
-
-
     //se crea un dato para la credencial de mp vinculado con el perfil, todo vacio menos random uuid y profile_id
     private  void generateCredentialMP( ProfileEntity profileEntity) {
         CredentialMPUser credentialMPUser = new CredentialMPUser();
         credentialMPUser.setId( UUID.randomUUID());
-        credentialMPUser.setProfile(profileEntity);
-        profileEntity.setCredentialMPUser(credentialMPUser);
+
+        profileRepository.findByUserId(profileEntity.getId());
+        credentialMPUser.setUserApp(profileEntity.getUser());
+        profileEntity.getUser().setCredentialMPUser(credentialMPUser);
         profileRepository.save(profileEntity);
     }
-
+    //Crea el url para dar autorizacion a la app de mp
     public String getUrlAuthMP(Long id) throws EntityNotFoundException {
         if(!profileRepository.existsById(id) ||
                 profileRepository.findById(id).get().getIsPresent() == Boolean.FALSE){
             throw new EntityNotFoundException("Profile not found or already deleted");
         }
         ProfileEntity profileEntity = profileRepository.findById(id).orElse(null);
-        String uuidRandom = profileEntity.getCredentialMPUser().getId().toString();
+
+        String uuidRandom = profileEntity.getUser().getCredentialMPUser().getId().toString();
 
         String url = base_url_auth+uuidRandom;
         return url;

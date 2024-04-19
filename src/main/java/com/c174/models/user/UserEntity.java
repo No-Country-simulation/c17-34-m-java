@@ -29,6 +29,8 @@ public class UserEntity implements Serializable {
     private ProfileEntity profile;
     @Embedded
     private Audit audit = new Audit();
+    @OneToOne(mappedBy = "userApp", cascade = CascadeType.ALL, orphanRemoval = true)
+    private CredentialMPUser credentialMPUser;
 
     @PrePersist
     public void prePersist() {

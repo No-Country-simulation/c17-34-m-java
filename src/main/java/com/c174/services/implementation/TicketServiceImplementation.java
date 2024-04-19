@@ -56,6 +56,7 @@ public class TicketServiceImplementation implements TicketService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<TicketResponse> getTicketByEvent(Long id) {
         List<TicketEntity> tickets = ticketRepository.findByEventId(id);
         if(tickets == null || tickets.isEmpty()){

@@ -17,7 +17,7 @@ public class CredentialMPUser {
     @Id
     UUID id;
     @OneToOne(fetch = FetchType.LAZY)
-    ProfileEntity profile;
+    UserEntity userApp;
     String access_token;
     String public_key;
     String refresh_token;

@@ -73,7 +73,10 @@ public class ProfileController {
 
     @Operation(summary = "Create tickets")
     @PostMapping("/{id}/ticket")
-    public ResponseEntity<?> createTicket(@PathVariable Long id, @RequestBody @Valid Optional<TicketRequest> ticket) throws EntityNotFoundException, NoBodyException, AlreadyExistsException, EntityExistsException {
+    public ResponseEntity<?> createTicket(@PathVariable Long id,
+                                          @RequestBody @Valid Optional<TicketRequest> ticket)
+            throws EntityNotFoundException, NoBodyException, AlreadyExistsException, EntityExistsException {
+
         if( ticket == null || ticket.isEmpty() ){
             throw new NoBodyException("No se recibio ningun dato");
         }

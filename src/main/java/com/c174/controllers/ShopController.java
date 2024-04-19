@@ -46,9 +46,6 @@ public class ShopController {
                                            @RequestParam("payment_status") String paymentStatus,
                                            @RequestParam("merchant_order_id") String merchantOrderId) {
         Map<String, Object> bodyResponse = new HashMap<>();
-        System.out.println("Payment ID: " + paymentId);
-        System.out.println("Payment Status: " + paymentStatus);
-        System.out.println("Merchant Order ID: " + merchantOrderId);
         bodyResponse.put("data", "Payment accepted");
         bodyResponse.put("success", Boolean.TRUE);
         return ResponseEntity.ok(bodyResponse);

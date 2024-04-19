@@ -29,33 +29,3 @@ INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_p
 INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 3', CURRENT_TIMESTAMP, 3, 3, 1,TRUE, 10000.00);
 INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 4', CURRENT_TIMESTAMP, 4, 4, 2 ,TRUE, 10000.00);
 INSERT INTO tickets( meta, create_at, transaction_id, profile_id, event_id, is_present, price) VALUES ( 'Meta 5', CURRENT_TIMESTAMP, 5, 2, 3,TRUE, 10000.00);
---- Insertar datos en la tabla data_bank
-INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 1, '123456', 'Ahorros', 'Banco de Bogotá', CURRENT_TIMESTAMP);
-INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 2, '123456', 'Ahorros', 'Banco de Bogotá', CURRENT_TIMESTAMP);
-INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 3, '123456', 'Ahorros', 'Banco de Bogotá', CURRENT_TIMESTAMP);
-INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 2, '123456', 'Billetera virtual', 'Mercado Pago', CURRENT_TIMESTAMP);
-INSERT INTO data_bank( profile_id, account_number, account_type, entity_bank,create_at) VALUES ( 3, '123456', 'Billetera virtual', 'Mercado Pago', CURRENT_TIMESTAMP);
---- Insertar datos en la tabla wallet_user
-INSERT INTO wallet_user( balance, state_account, create_at) VALUES (10000.00, 'ACTIVE', CURRENT_TIMESTAMP);
-INSERT INTO wallet_user(  balance, state_account, create_at) VALUES (  15000.00, 'ACTIVE', CURRENT_TIMESTAMP);
-INSERT INTO wallet_user(  balance, state_account, create_at) VALUES (  9000.00, 'ACTIVE', CURRENT_TIMESTAMP);
-INSERT INTO wallet_user(  balance, state_account, create_at) VALUES ( 3000.00, 'ACTIVE', CURRENT_TIMESTAMP);
-INSERT INTO wallet_user(  balance, state_account, create_at) VALUES ( 20000.00, 'ACTIVE', CURRENT_TIMESTAMP);
---- Insertar datos en la tabla wallet_user
-UPDATE profiles SET wallet_id = 1 WHERE id = 1;
-UPDATE profiles SET wallet_id = 2 WHERE id = 2;
-UPDATE profiles SET wallet_id = 3 WHERE id = 3;
-UPDATE profiles SET wallet_id = 4 WHERE id = 4;
-UPDATE profiles SET wallet_id = 5 WHERE id = 5;
---- Insertar datos en la tabla transaccion
-UPDATE transactions SET wallet_buyer_id = 1 WHERE id = 1;
-UPDATE transactions SET wallet_buyer_id = 2 WHERE id = 2;
-UPDATE transactions SET wallet_buyer_id = 3 WHERE id = 3;
-UPDATE transactions SET wallet_buyer_id = 4 WHERE id = 4;
-UPDATE transactions SET wallet_buyer_id = 2 WHERE id = 5;
---- Insertar datos en la tabla transaccion
-UPDATE transactions SET wallet_seller_id = 2 WHERE id = 1;
-UPDATE transactions SET wallet_seller_id = 3 WHERE id = 2;
-UPDATE transactions SET wallet_seller_id = 4 WHERE id = 3;
-UPDATE transactions SET wallet_seller_id = 5 WHERE id = 4;
-UPDATE transactions SET wallet_seller_id = 5 WHERE id = 5;

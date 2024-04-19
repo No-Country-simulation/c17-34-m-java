@@ -9,7 +9,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -38,7 +37,6 @@ public class EventController {
     @GetMapping("/name")
     public ResponseEntity<?> getByName( @RequestParam String name) throws EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
-
         List<EventResponse> response = eventService.getByName(name);
         bodyResponse.put("data", response);
         bodyResponse.put("success", Boolean.TRUE);
@@ -73,7 +71,6 @@ public class EventController {
     @DeleteMapping("/id/{id}")
     public ResponseEntity<?> deleteEvent(@PathVariable Long id) throws EntityDeleteException, EntityNotFoundException {
         Map<String, Object> bodyResponse = new HashMap<>();
-
         String response = eventService.delete(id);
         bodyResponse.put("data", response);
         bodyResponse.put("success", Boolean.TRUE);
@@ -84,11 +81,9 @@ public class EventController {
     @PatchMapping("/id/{id}")
     public ResponseEntity<?> updateEvent(@PathVariable Long id, @RequestBody @Valid Optional<EventRequest> event) throws EntityUploadException, EntityNotFoundException, NoBodyException {
         Map<String, Object> bodyResponse = new HashMap<>();
-
         if( event == null || event.isEmpty() ){
             throw new NoBodyException("No se recibio ningun dato");
         }
-
         eventService.update(id, event.get());
         bodyResponse.put("data", "Entity update");
         bodyResponse.put("success", Boolean.TRUE);

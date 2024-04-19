@@ -8,5 +8,5 @@ import java.util.UUID;
 
 public interface MpUserRepository extends JpaRepository<CredentialMPUser, UUID> {
     Optional<CredentialMPUser> findById(UUID id);
-    Optional<CredentialMPUser> findByProfileId(Long profileId);
+    Optional<CredentialMPUser> findByUserApp_Id(Long userId);
 }

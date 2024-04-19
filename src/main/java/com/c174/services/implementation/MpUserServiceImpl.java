@@ -4,29 +4,14 @@ import com.c174.exception.BadRequestException;
 import com.c174.exception.EntityExistsException;
 import com.c174.exception.EntityNotFoundException;
 import com.c174.models.mpuser.*;
-import com.c174.models.profile.ProfileEntity;
-import com.c174.models.shop.UserShop;
-import com.c174.models.ticket.TicketEntity;
-import com.c174.models.ticket.TicketShop;
-import com.c174.models.user.UserEntity;
 import com.c174.models.user.UserMapper;
 import com.c174.repositorys.MpUserRepository;
 import com.c174.repositorys.ProfileRepository;
-import com.c174.repositorys.UserRepository;
 import com.c174.services.abstraccion.MpUserService;
-import com.mercadopago.MercadoPagoConfig;
-import com.mercadopago.client.preference.PreferenceClient;
-import com.mercadopago.client.preference.PreferenceItemRequest;
-import com.mercadopago.client.preference.PreferencePayerRequest;
-import com.mercadopago.client.preference.PreferenceRequest;
-import com.mercadopago.resources.preference.Preference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -84,16 +69,6 @@ public class MpUserServiceImpl extends AbstractMPClient implements MpUserService
         credentialMPUser.setScope(request.getScope());
 
         mpUserRepository.save(credentialMPUser);
-    }
-
-    private CredentialMPResponse getCredentialMPUser(Long userId) throws EntityNotFoundException {
-        Optional<ProfileEntity> profile = profileRepository.findById(userId);
-        if(profile.isEmpty()){
-            throw new EntityNotFoundException("User not found");
-        }
-
-        CredentialMPUser credentialMPUser = profile.get().getCredentialMPUser();
-        return credentialMapper.toCredentialMPResponse(credentialMPUser);
     }
 
 

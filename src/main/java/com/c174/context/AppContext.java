@@ -9,7 +9,6 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class AppContext {
-
     @Bean
     RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
@@ -18,7 +17,6 @@ public class AppContext {
         restTemplate.getMessageConverters().add(converter);
         return restTemplate;
     }
-
     @Bean
     RequestToken requestToken() {
         return new RequestToken();
