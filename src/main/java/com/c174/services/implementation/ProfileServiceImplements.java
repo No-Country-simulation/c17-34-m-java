@@ -12,12 +12,11 @@ import com.c174.models.ticket.TicketRequest;
 import com.c174.models.ticket.TicketResponse;
 import com.c174.repositorys.ProfileRepository;
 import com.c174.repositorys.TicketRepository;
-import com.c174.repositorys.UserRepository;
 import com.c174.services.abstraccion.ProfileService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 import java.util.List;
 import java.util.UUID;
@@ -114,10 +113,17 @@ public class ProfileServiceImplements implements ProfileService {
         profileEntity.getTickets().add(savedTicket);
         savedTicket.setOwner(profileEntity);
 
-        generateCredentialMP(profileEntity); // implementar metodo donde corresponda para generar credenciales de mp
         return ticketMapper.toTicketResponse(savedTicket);
     }
 
+    public String authoMP(Long id) throws EntityNotFoundException {
+        if(!profileRepository.existsById(id)){
+            throw new EntityNotFoundException("Profile not found");
+        }
+        ProfileEntity profileEntity = profileRepository.findById(id).orElse(null);
+        generateCredentialMP(profileEntity);
+        return getUrlAuthMP(id);
+    }
     //se crea un dato para la credencial de mp vinculado con el perfil, todo vacio menos random uuid y profile_id
     private  void generateCredentialMP( ProfileEntity profileEntity) {
         CredentialMPUser credentialMPUser = new CredentialMPUser();
@@ -129,7 +135,7 @@ public class ProfileServiceImplements implements ProfileService {
         profileRepository.save(profileEntity);
     }
     //Crea el url para dar autorizacion a la app de mp
-    public String getUrlAuthMP(Long id) throws EntityNotFoundException {
+    private String getUrlAuthMP(Long id) throws EntityNotFoundException {
         if(!profileRepository.existsById(id) ||
                 profileRepository.findById(id).get().getIsPresent() == Boolean.FALSE){
             throw new EntityNotFoundException("Profile not found or already deleted");

@@ -16,6 +16,5 @@ public interface ProfileService {
     ProfileResponse updateProfile(ProfileRequest profile) throws EntityNotFoundException, EntityUploadException;
     String deleteProfile(Long id) throws EntityDeleteException, EntityNotFoundException;
     TicketResponse createTicket  (Long profileId, TicketRequest ticketRequest) throws EntityNotFoundException, AlreadyExistsException, EntityExistsException;
-
-    String getUrlAuthMP(Long id) throws EntityNotFoundException;
+    String authoMP(Long id) throws EntityNotFoundException;
 }

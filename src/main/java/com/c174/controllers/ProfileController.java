@@ -83,8 +83,17 @@ public class ProfileController {
         Map<String, Object> bodyResponse = new HashMap<>();
         TicketResponse response = profileService.createTicket(id, ticket.get());
         bodyResponse.put("new_ticket", response);
+        bodyResponse.put("success", Boolean.TRUE);
+        return ResponseEntity.status(HttpStatus.OK).body(bodyResponse);
+    }
+
+    @Operation(summary = "Create tickets")
+    @PostMapping("/{id}/auth-mp")
+    public ResponseEntity<?> authorizationMP(@PathVariable Long id)
+            throws EntityNotFoundException, NoBodyException, AlreadyExistsException, EntityExistsException {
+        Map<String, Object> bodyResponse = new HashMap<>();
         //TODO: CAMBIAR donde corresponda la accion para pedir acceso a mp
-        bodyResponse.put("mp_url",profileService.getUrlAuthMP(id));  // URL que da permisos, el id es del profile, corresponde genera un id aleatorio por cada peticion en realidad
+        bodyResponse.put("mp_url",profileService.authoMP(id));  // URL que da permisos, el id es del profile, corresponde genera un id aleatorio por cada peticion en realidad
         bodyResponse.put("success", Boolean.TRUE);
         return ResponseEntity.status(HttpStatus.OK).body(bodyResponse);
     }
