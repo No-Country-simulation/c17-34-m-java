@@ -28,7 +28,7 @@
     color: white;
     font-size: 2.821vw;
   }
-  .mobile-ticket-navigator ul li a.active-link-p2p{
+  .mobile-ticket-navigator ul li a.active-link{
     color: #BCFF2F;
   }
   .mobile-ticket-navigator ul li a[disabled]{

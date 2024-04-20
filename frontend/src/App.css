@@ -1,3 +1,11 @@
+:root{
+    --color-primary: #0D0D0D;
+    --color-input: #D9D9D9;
+    --color-green: #25A74F;
+    --color-red: #CA4064;
+    --color-active: #BCFF2F;
+}
+
 *{
     box-sizing: border-box;
     margin: 0px;

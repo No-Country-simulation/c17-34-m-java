@@ -43,15 +43,8 @@
     font-size: 3.59vw;
     font-weight: 400;
   }
-  .user-profile-view.content-bottom a{
-    display: inline-block;
+  .user-profile-view.content-bottom .edit-profile{
     width: fit-content;
     margin: 4.103vw 0;
-    text-decoration: none;
-    padding: 1.538vw 7.949vw;
-    border: none;
-    border-radius: 20px;
-    background-color: black;
-    color: rgb(255, 255, 255);
   }
 }

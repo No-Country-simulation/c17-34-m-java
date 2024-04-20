@@ -1,5 +1,6 @@
 @media (width <= 480px) {
   .tickets-container {
+    padding-bottom: 30vw;
     display: flex;
     justify-content: center;
   }
@@ -44,25 +45,6 @@
     font-size: 3.59vw;
     font-weight: 300;
     color: #6a6a6a;
-  }
-
-  .ticket .bottom-info .purchase-ticket-button {
-    font-size: 3.59vw;
-    padding: 6px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #26a84e;
-    color: white;
-    font-weight: 400;
-  }
-  .ticket .bottom-info .sale-ticket-button {
-    font-size: 3.59vw;
-    padding: 6px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #CA4064;
-    color: white;
-    font-weight: 400;
   }
   .background-ticket-navigator{
     position: fixed;

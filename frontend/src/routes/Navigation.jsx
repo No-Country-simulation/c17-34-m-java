@@ -8,7 +8,12 @@ import SalesTickets from "../components/Tickets/SalesTickets/SalesTickets";
 import UpcomingTickets from "../components/Wallet/UpcomingTickets/UpcomingTickets";
 import CompletedTickets from "../components/Wallet/CompletedTickets/CompletedTickets";
 import UserProfileView from "../components/UserProfile/UserProfileView/UserProfileView";
-import UserProfileEdit from './../components/UserProfile/UserProfileEdit/UserProfileEdit';
+import UserProfileEdit from "./../components/UserProfile/UserProfileEdit/UserProfileEdit";
+import ActiveOffers from "../components/Offers/ActiveOffers/ActiveOffers";
+import CompletedOffers from "../components/Offers/CompletedOffers/CompletedOffers";
+import PurchaseOrder from "../components/Orders/PurchaseOrder/PurchaseOrder";
+import SalesOrder from "../components/Orders/SalesOrder/SalesOrder";
+import ExtendedTicketView from "../components/Tickets/ExtendedTicketView/ExtendedTicketView";
 
 const routes = createBrowserRouter([
   {
@@ -25,11 +30,11 @@ const routes = createBrowserRouter([
   },
   {
     path: "/wallet/upcoming",
-    element: <UpcomingTickets/>
+    element: <UpcomingTickets />,
   },
   {
     path: "/wallet/completed",
-    element: <CompletedTickets/>
+    element: <CompletedTickets />,
   },
   {
     path: "/tickets/purchase",
@@ -40,12 +45,32 @@ const routes = createBrowserRouter([
     element: <SalesTickets />,
   },
   {
+    path: "/ticket/1",
+    element: <ExtendedTicketView/>
+  },
+  {
+    path: "/offers/active",
+    element: <ActiveOffers/>
+  },
+  {
+    path:"/offers/completed",
+    element: <CompletedOffers/>
+  },
+  {
+    path: "/order/purchase",
+    element: <PurchaseOrder/>
+  },
+  {
+    path: "/order/sales",
+    element: <SalesOrder/>
+  },
+  {
     path: "/user/profile",
-    element: <UserProfileView/>
+    element: <UserProfileView />,
   },
   {
     path: "/user/profile/edit",
-    element: <UserProfileEdit/>
+    element: <UserProfileEdit />,
   },
   {
     path: "/*",

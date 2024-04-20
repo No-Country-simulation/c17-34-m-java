@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { AngleLeftIcon } from "./../../Icons/Basic/AngleLeftIcon";
 import { ThumbsUpIcon } from "./../../Icons/Basic/ThumbsUpIcon";
 import "../tickets.css";
 import MenuTicketHeader from "../MenuTicketHeader/MenuTicketHeader";
-import TicketNavigator from "./../../Layout/Mobile/TicketNavigator/TicketNavigator";
+import SecondaryMobileButton from "./../../Buttons/mobile/SecondaryMobileButton";
+import FloatingNavbarMobile from "../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile";
 const SalesTickets = () => {
   return (
     <>
@@ -23,7 +22,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 55,300
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -38,7 +39,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 27,500
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -53,7 +56,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 36,700
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -68,7 +73,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 49,800
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -83,7 +90,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 27,500
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -98,7 +107,9 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 36,700
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
           <section className="ticket">
@@ -113,13 +124,15 @@ const SalesTickets = () => {
               <h2>
                 <span>ARS$</span> 55,300
               </h2>
-              <button className="sale-ticket-button">Vender</button>
+              <SecondaryMobileButton backColor="var(--color-red)">
+                Vender
+              </SecondaryMobileButton>
             </div>
           </section>
         </div>
       </div>
       <div className="background-ticket-navigator">
-        <TicketNavigator />
+        <FloatingNavbarMobile/>
       </div>
     </>
   );

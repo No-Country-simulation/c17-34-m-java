@@ -1,0 +1,7 @@
+@media (width <= 480px){
+    .troca-logo-mobile{
+        width: 132px;
+        height: auto;
+        fill: black;
+    }
+}

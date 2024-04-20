@@ -2,9 +2,9 @@ import React from "react";
 import { HomeIcon } from "../../../Icons/Basic/HomeIcon";
 import { NavLink, useLocation } from "react-router-dom";
 import { WalletIcon } from "../../../Icons/Basic/WalletIcon";
-import "./mainMobileNavbar.css";
+import "./mainNavbarMobile.css";
 import { UsersIcon } from "../../../Icons/Basic/UsersIcon";
-const MainMobileNavbar = () => {
+const MainNavbarMobile = () => {
   const location = useLocation();
   const isActiveWallet =
     location.pathname.startsWith("/wallet/upcoming") ||
@@ -39,4 +39,4 @@ const MainMobileNavbar = () => {
   );
 };
 
-export default MainMobileNavbar;
+export default MainNavbarMobile;

@@ -4,8 +4,8 @@ import { ThumbsUpIcon } from "./../../Icons/Basic/ThumbsUpIcon";
 import { ThumbsDownIcon } from "./../../Icons/Basic/ThumbsDownIcon";
 const UserRating = () => {
   const initalValue = 25;
-  const positiveRating = 95.6;
-  const negativeRating = 4.4;
+  const positiveRating = 80;
+  const negativeRating = 20;
   const rating1 = initalValue + positiveRating;
   const rating2 = initalValue + negativeRating;
   return (
