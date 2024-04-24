@@ -7,10 +7,15 @@ import { MercadoPagoIcon } from "./../../Icons/SocialMedia/MercadoPagoIcon";
 import Profile1 from "../../../assets/images/Profile/profile1.jpg";
 import UserRating from "../UserRating/UserRating";
 import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
-import SecondaryMobileButton from "./../../Buttons/mobile/SecondaryMobileButton";
+import SecondaryButton from './../../Buttons/SecondaryButton/SecondaryButton';
+import Layout from './../../Layout/Desktop/Layout';
+import FloatingNavbarMobile from './../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile';
 const UserProfileView = () => {
   return (
-    <>
+    <Layout>
+      <div className="desktop-only">
+        <FloatingNavbarMobile/>
+      </div>
       <TopBarMobile linkTo="/tickets/purchase">
         <Link to="/">
           <SettingsIcon width="20px" height="20px" />
@@ -33,14 +38,14 @@ const UserProfileView = () => {
             </div>
             <div className="edit-profile">
               <Link to="/user/profile/edit">
-                <SecondaryMobileButton>Editar</SecondaryMobileButton>
+                <SecondaryButton text="Editar"/>
               </Link>
             </div>
           </div>
         </div>
       </div>
       <UserRating />
-    </>
+    </Layout>
   );
 };
 

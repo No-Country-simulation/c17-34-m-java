@@ -1,140 +1,96 @@
 import React from "react";
-import { ThumbsUpIcon } from "./../../Icons/Basic/ThumbsUpIcon";
 import "../tickets.css";
-import MenuTicketHeader from "../MenuTicketHeader/MenuTicketHeader";
-import SecondaryMobileButton from "./../../Buttons/mobile/SecondaryMobileButton";
-import FloatingNavbarMobile from "../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile";
+import { ThumbsUpIcon } from "./../../Icons/Basic/ThumbsUpIcon";
+import { Link, NavLink } from "react-router-dom";
+import FloatingNavbarMobile from "./../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile";
+import Layout from "./../../Layout/Desktop/Layout";
+import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
+import TopBarP2P from "../MenuTicketHeader/TopBarP2P";
+import { MercadoPagoIcon } from './../../Icons/SocialMedia/MercadoPagoIcon';
+
 const SalesTickets = () => {
   return (
-    <>
-      <MenuTicketHeader />
-      <div className="tickets-container">
-        <div className="tickets">
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Miss Monique</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 55,300
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Ben bohmer & Eelke kleijn</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 27,500
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Juan Hansen (Live), transformation (Live)...</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 36,700
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Miss Monique</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 49,800
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Ben bohmer & Eelke kleijn</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 27,500
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Juan Hansen (Live), transformation (Live)...</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 36,700
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
-          <section className="ticket">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>Miss Monique</h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 55,300
-              </h2>
-              <SecondaryMobileButton backColor="var(--color-red)">
-                Vender
-              </SecondaryMobileButton>
-            </div>
-          </section>
+    <Layout>
+      <div className="background-ticket-navigator">
+        <FloatingNavbarMobile />
+      </div>
+      <TopBarP2P />
+      <div className="sale-purchase-navbar">
+        <div className="content">
+          <ul>
+            <li>
+              <NavLink to="/tickets/purchase">Compra</NavLink>
+            </li>
+            <li>
+              <NavLink to="/tickets/sale">Venta</NavLink>
+            </li>
+          </ul>
+          <div className="desktop-only">
+            <Link to="/ticket/add">
+              <SecondaryButton text="Crear Oferta" />
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="background-ticket-navigator">
-        <FloatingNavbarMobile/>
+      <div className="tickets-container">
+        <div className="tickets">
+          <table>
+            <tr className="desktop-only">
+              <th>Vendedor</th>
+              <th>Evento</th>
+              <th>Precio</th>
+              <th>Método de pago</th>
+              <th>Compra / Venta</th>
+            </tr>
+            <tr>
+              <td className="seller-info">
+                <p>Troca User</p>
+                <div>
+                  <span className="mobile-only">-</span>
+                  <ThumbsUpIcon width="10px" height="10px" className="icon"/>
+                  <span>99.53%</span>
+                </div>
+              </td>
+              <td className="event-name">Miss Monique</td>
+              <td className="price">
+                <p><span>ARS$</span> 55,300</p>
+                <div className="mobile-only">
+                  <SecondaryButton text="Vender" backColor="var(--color-red)"/>
+                </div>
+              </td>
+              <td className="payment desktop-only">
+                <MercadoPagoIcon/>
+                  Mercado Pago
+              </td>
+              <td className="desktop-only"><SecondaryButton text="Vender" backColor="var(--color-red)"/></td>
+            </tr>
+            <tr>
+              <td className="seller-info">
+                <p>Troca User</p>
+                <div>
+                  <span className="mobile-only">-</span>
+                  <ThumbsUpIcon width="10px" height="10px" className="icon"/>
+                  <span>99.53%</span>
+                </div>
+              </td>
+              <td className="event-name">Juan Hansen (Live), 
+                transformation (Live)...</td>
+              <td className="price">
+                <p><span>ARS$</span> 27,500</p>
+                <div className="mobile-only">
+                <SecondaryButton text="Vender" backColor="var(--color-red)"/>
+                </div>
+              </td>
+              <td className="payment desktop-only">
+                <MercadoPagoIcon/>
+                  Mercado Pago
+              </td>
+              <td className="desktop-only"><SecondaryButton text="Vender" backColor="var(--color-red)"/></td>
+            </tr>
+          </table>
+        </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

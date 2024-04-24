@@ -4,13 +4,13 @@ import { SearchIcon } from "./../Icons/Basic/SearchIcon";
 
 const Search = () => {
   return (
-    <div className="mobile-search">
+    <div className="search">
       <form className="search-form">
         <input 
           type="text" 
           name="search" 
           placeholder="Buscar por nombre o lugar" 
-          className="mobile-search-input"
+          className="search-input"
           />
           <button type="submit">
            <SearchIcon width="20" height="20"/>

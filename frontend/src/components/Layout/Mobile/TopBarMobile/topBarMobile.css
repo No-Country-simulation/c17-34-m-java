@@ -1,7 +1,22 @@
-@media (width <= 480px){
-    .troca-logo-mobile{
-        width: 132px;
-        height: auto;
-        fill: black;
-    }
+@media (width <= 480px) {
+  .top-bar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8.205vw 6.923vw 0;
+    list-style-type: none;
+  }
+  .top-bar-mobile li h1{
+    font-size: 5.128vw;
+    letter-spacing: -0.105vw;
+  }
+  .top-bar-mobile li a{
+    text-decoration: none;
+    color: black;
+  }
+  .troca-logo-mobile {
+    width: 132px;
+    height: auto;
+    fill: black;
+  }
 }

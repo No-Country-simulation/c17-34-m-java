@@ -1,3 +1,92 @@
-@media (width <= 480px){
-    
+@media (width <= 480px) {
+  .extended-ticket-container {
+    display: flex;
+    justify-content: center;
+  }
+  .extended-ticket {
+    width: 90%;
+  }
+  .extended-ticket .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20vw;
+  }
+  .extended-ticket .content .top h1 {
+    margin: 8.205vw 0 4.103vw;
+    font-size: 4.615vw;
+    font-weight: bold;
+  }
+  .extended-ticket .content .top ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.051vw;
+    list-style-type: none;
+  }
+  .extended-ticket .content .top ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4.103vw;
+    line-height: 137.5%;
+    letter-spacing: -0.105vw;
+  }
+  .extended-ticket .content .top ul li span {
+    color: #6a6a6a;
+    font-weight: 400;
+  }
+  .extended-ticket .content .top ul li p {
+    color: black;
+    font-weight: bold;
+  }
+  .extended-ticket .content .top ul li .mp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.026vw;
+  }
+  .extended-ticket .content .top ul li .mp p {
+    color: #4fc3f7;
+    font-weight: 400;
+  }
+  .extended-ticket .content .top ul li .price {
+    font-size: 5.897vw;
+    font-weight: bold;
+  }
+  .extended-ticket .content .top ul li .price span {
+    font-size: 3.59vw;
+    font-weight: 300;
+  }
+  .extended-ticket .content .top ul hr {
+    margin: 1.026vw 0 2.051vw;
+    border: 1px solid #d9d9d9;
+  }
+
+  .extended-ticket .content .bottom {
+    margin-bottom: 19.487vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2.051vw;
+  }
+  .extended-ticket .content .bottom h2 {
+    font-size: 6.667vw;
+  }
+  .extended-ticket .content .bottom img {
+    margin: 4.051vw 0 4.051vw;
+    aspect-ratio: 1;
+  }
+  .extended-ticket .content .bottom h3,
+  .extended-ticket .content .bottom address,
+  .extended-ticket .content .bottom p {
+    font-size: 4.103vw;
+    font-weight: 400;
+    line-height: 137.5%;
+    letter-spacing: -0.105vw;
+    color: #6a6a6a;
+  }
+  .extended-ticket .content .bottom address {
+    max-width: 230px;
+  }
 }

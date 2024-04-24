@@ -1,14 +1,25 @@
-:root{
-    --color-primary: #0D0D0D;
-    --color-input: #D9D9D9;
-    --color-green: #25A74F;
-    --color-red: #CA4064;
-    --color-active: #BCFF2F;
+:root {
+  --color-primary: #0d0d0d;
+  --color-input: #d9d9d9;
+  --color-green: #25a74f;
+  --color-red: #ca4064;
+  --color-active: #bcff2f;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Basic-Sans',Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Basic-Sans", Arial, sans-serif;
+}
+
+@media (width > 480px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media (width <= 480px) {
+  .desktop-only {
+    display: none !important;
+  }
 }

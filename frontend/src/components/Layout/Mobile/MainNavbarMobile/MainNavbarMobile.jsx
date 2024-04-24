@@ -10,18 +10,18 @@ const MainNavbarMobile = () => {
     location.pathname.startsWith("/wallet/upcoming") ||
     location.pathname.startsWith("/wallet/completed");
   return (
-    <div className="mobile-navbar-container">
+    <div className="mobile-navbar-container mobile-only">
       <div className="mobile-header-content">
         <div>
           <NavLink to="/tickets/purchase" className="p2p-link">
-            <UsersIcon />
+            <UsersIcon width="30px" height="30px"/>
           </NavLink>
         </div>
       </div>
       <ul className="mobile-main-content">
         <li>
           <NavLink to="/" >
-            <HomeIcon />
+            <HomeIcon width="24px" height="24px"/>
             <span>Home</span>
           </NavLink>
         </li>
@@ -30,7 +30,7 @@ const MainNavbarMobile = () => {
             to="/wallet/upcoming"
             className={isActiveWallet ? "active-link-wallet" : ""}
           >
-            <WalletIcon />
+            <WalletIcon width="24px" height="24px"/>
             <span>Wallet</span>
           </NavLink>
         </li>

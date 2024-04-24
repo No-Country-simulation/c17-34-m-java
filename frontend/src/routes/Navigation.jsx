@@ -14,6 +14,7 @@ import CompletedOffers from "../components/Offers/CompletedOffers/CompletedOffer
 import PurchaseOrder from "../components/Orders/PurchaseOrder/PurchaseOrder";
 import SalesOrder from "../components/Orders/SalesOrder/SalesOrder";
 import ExtendedTicketView from "../components/Tickets/ExtendedTicketView/ExtendedTicketView";
+import AddManualTicket from "../components/Tickets/AddManualTicket/AddManualTicket";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
   {
     path: "/tickets/sale",
     element: <SalesTickets />,
+  },
+  {
+    path: "/ticket/add",
+    element: <AddManualTicket/>
   },
   {
     path: "/ticket/1",

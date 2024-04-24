@@ -4,13 +4,17 @@ import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import { PlusIcon } from "./../../Icons/Basic/PlusIcon";
 import { Link, NavLink } from "react-router-dom";
 import FloatingNavbarMobile from "./../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile";
-import SecondaryMobileButton from "../../Buttons/mobile/SecondaryMobileButton";
 import { ThumbsUpIcon } from "../../Icons/Basic/ThumbsUpIcon";
+import Layout from './../../Layout/Desktop/Layout';
+import SecondaryButton from './../../Buttons/SecondaryButton/SecondaryButton';
 const ActiveOffers = () => {
   return (
-    <>
+    <Layout>
+     <div className="background-offer-navigator">
+        <FloatingNavbarMobile />
+      </div>
       <TopBarMobile linkTo="/tickets/purchase" title="Ofertas">
-        <Link to="/order/purchase">
+        <Link to="/ticket/add">
           <PlusIcon width="24px" height="24px" />
         </Link>
       </TopBarMobile>
@@ -35,9 +39,7 @@ const ActiveOffers = () => {
               <h2>
                 <span>ARS$</span> 55,300
               </h2>
-              <SecondaryMobileButton backColor="#6A6A6A">
-                Pausada
-              </SecondaryMobileButton>
+              <SecondaryButton  text="Pausada" backColor="#6A6A6A"/>
             </div>
           </section>
           <section className="offer">
@@ -54,18 +56,12 @@ const ActiveOffers = () => {
               <h2>
                 <span>ARS$</span> 27,500
               </h2>
-              <SecondaryMobileButton fontColor="var(--color-active)">
-                Activa
-              </SecondaryMobileButton>
+              <SecondaryButton text="Activa" fontColor="var(--color-active)"/>
             </div>
           </section>
-          
         </div>
       </div>
-      <div className="background-offer-navigator">
-        <FloatingNavbarMobile />
-      </div>
-    </>
+    </Layout>
   );
 };
 

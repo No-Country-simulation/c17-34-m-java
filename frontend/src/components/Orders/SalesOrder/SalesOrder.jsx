@@ -3,7 +3,7 @@ import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import { NavLink } from "react-router-dom";
 import "../orders.css";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
-import PrimaryMobileButton from "./../../Buttons/mobile/PrimaryMobileButton";
+import PrimaryButton from './../../Buttons/PrimaryButton/PrimaryButton';
 const SalesOrder = () => {
   return (
     <>
@@ -62,9 +62,9 @@ const SalesOrder = () => {
           </div>
 
           <div className="bottom">
-            <PrimaryMobileButton backColor="var(--color-red)">
+            <PrimaryButton backColor="var(--color-red)">
               Crear orden de venta
-            </PrimaryMobileButton>
+            </PrimaryButton>
           </div>
         </section>
       </div>

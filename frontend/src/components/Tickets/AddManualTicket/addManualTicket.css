@@ -1,0 +1,58 @@
+@media (width <= 480px){
+    .add-manual-ticket-container{
+        display: flex;
+        justify-content: center;
+    }
+    .add-manual-ticket{
+        width: 90%;
+    }
+    .add-manual-ticket .content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .add-manual-ticket .content .top p{
+        font-size: 3.59vw;
+        color: #6A6A6A;
+    }
+    .add-manual-ticket .content .top .info{
+        margin: 6.41vw 0;
+    }
+    .add-manual-ticket .content .top .process section{
+        margin-bottom: 6.154vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2.051vw;
+    }
+    .add-manual-ticket .content .top .process section .details{
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+    }
+    .add-manual-ticket .content .top .process section span{
+        display: block;
+        min-width: 7.692vw;
+        min-height: 6.41vw;
+        font-size: 4.103vw;
+        font-weight: bold;
+        text-align: center; 
+        line-height: 7.692vw; 
+        border-radius: 50%;
+        background-color: black;
+        color: #FFF;
+    }
+    .add-manual-ticket .content .top .process section h2{
+        max-width: 73.077vw;
+        font-size: 4.615vw;
+    }
+    .add-manual-ticket .content .top .process section h3{
+        font-size: 4.103vw;
+        font-weight: normal;
+    }
+
+    .add-manual-ticket .content .bottom{
+        margin-bottom: 30vw;
+    }
+}

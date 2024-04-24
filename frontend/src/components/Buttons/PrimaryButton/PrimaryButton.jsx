@@ -1,7 +1,7 @@
 import React from "react";
 
-const PrimaryMobileButton = ({
-  children,
+const PrimaryButton = ({
+  text,
   onClick,
   type,
   backColor,
@@ -10,6 +10,7 @@ const PrimaryMobileButton = ({
   const buttonStyles = {
     width: "100%",
     height: "auto",
+    cursor: "pointer",
     padding: "3.846vw 0 3.846vw 0",
     backgroundColor: backColor || "black",
     color: fontColor || "white",
@@ -20,9 +21,9 @@ const PrimaryMobileButton = ({
   };
   return (
     <button style={buttonStyles} onClick={onClick} type={type}>
-      {children}
+      {text}
     </button>
   );
 };
 
-export default PrimaryMobileButton;
+export default PrimaryButton;

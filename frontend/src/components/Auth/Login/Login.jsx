@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
-import AuthButton from "./../../Buttons/AuthButton/AuthButton";
+import PrimaryButton from "../../Buttons/PrimaryButton/PrimaryButton";
 const Login = () => {
   return (
     <div className="login-container">
@@ -23,7 +23,7 @@ const Login = () => {
         </div>
       </div>
       <div className="login-end-content">
-        <AuthButton title="Inicia sesión" />
+        <PrimaryButton text="Inicia sesión"/>
         <p className="register-redirection">
           No tenes cuenta? <Link to="/register">Regístrate</Link>
         </p>

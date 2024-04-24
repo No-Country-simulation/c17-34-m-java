@@ -1,56 +1,240 @@
+/* Sale - Purchase Navbar */
+.sale-purchase-navbar {
+  margin-top: 4vw;
+  display: flex;
+  justify-content: center;
+}
+.sale-purchase-navbar .content {
+  width: min(1440px, 80%);
+  padding: 0 60px 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #d9d9d9;
+}
+.sale-purchase-navbar ul {
+  display: flex;
+  gap: 32px;
+  list-style-type: none;
+}
+.sale-purchase-navbar ul li a {
+  font-size: 23px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #6a6a6a;
+}
+.sale-purchase-navbar ul li a:hover {
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 12px 0px;
+  font-weight: bold;
+  transition: color 0.2s ease-in;
+}
+.sale-purchase-navbar ul li a.active {
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 12px 0px;
+  font-weight: bold;
+}
+/* Tickets P2P */
+.tickets-container {
+  margin-top: 40px;
+  padding-bottom: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.tickets {
+  width: min(1440px, 80%);
+}
+.tickets table {
+  width: 100%;
+}
+.tickets table tr {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: normal;
+  align-items: center;
+  border-bottom: 2px solid #d9d9d9;
+}
+.tickets table th,
+.tickets table td {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.tickets table tr th {
+  padding-bottom: 12px;
+  font-size: 14px;
+  color: #6a6a6a;
+}
+.tickets table tr td {
+  padding-bottom: 20px;
+}
+.tickets table tr .seller-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tickets table tr .seller-info p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.tickets table tr .seller-info div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.tickets table tr .seller-info div span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6a6a6a;
+}
+.tickets table tr .seller-info div .icon {
+  width: 12px;
+  height: 12px;
+}
+.tickets table tr .event-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.tickets table tr .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.tickets table tr .price span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6a6a6a;
+}
+.tickets table tr .payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  color: #4fc3f7;
+}
+
 @media (width <= 480px) {
-  .tickets-container {
-    padding-bottom: 30vw;
-    display: flex;
+  /* Sale - Purchase Navbar */
+  .sale-purchase-navbar {
+    margin: 0;
     justify-content: center;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  .sale-purchase-navbar .content {
+    border-bottom: none;
+  }
+  .sale-purchase-navbar .content ul {
+    padding-bottom: 0;
+    margin-top: 6.154vw;
+    margin-bottom: 2.077vw;
+    justify-content: flex-start;
+    gap: 4.103vw;
+  }
+  .sale-purchase-navbar li a {
+    font-size: 5.897vw;
+  }
+  .sale-purchase-navbar ul li a:hover {
+    color: black;
+    border: none;
+    padding: 0d;
+    font-weight: bold;
+    transition: none;
+  }
+  .sale-purchase-navbar ul li a.active {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  /* Tickets P2P */
+  .tickets-container {
+    margin-top: 3.077vw;
+    padding-bottom: 30vw;
   }
   .tickets {
     width: 90%;
   }
-  .ticket {
-    margin-top: 3.077vw;
+  .tickets table tr {
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #d9d9d9;
+    justify-content: center;
+    align-items: flex-start;
   }
-  .ticket .header-info {
-    display: flex;
+  .tickets table th,
+  .tickets table td {
     justify-content: flex-start;
+    text-align: left;
+  }
+  .tickets table tr td {
+    padding-bottom: 2.051vw;
+  }
+  .tickets table tr .seller-info {
+    flex-direction: row;
     align-items: baseline;
     gap: 0.513vw;
   }
-  .ticket .header-info p {
+  .tickets table tr .seller-info p {
     font-size: 4.103vw;
-    font-weight: 400;
-    color: #000000;
+    font-weight: 600;
   }
-  .ticket .header-info span {
+  .tickets table tr .seller-info div {
+    gap: 0.513vw;
+  }
+  .tickets table tr .seller-info div span {
     font-size: 11px;
     font-weight: 400;
     color: #6a6a6a;
   }
-  .ticket h1 {
+  .tickets table tr .seller-info div .icon {
+    width: 12px;
+    height: 12px;
+  }
+  .tickets table tr .event-name {
     font-size: 6.667vw;
   }
-  .ticket .bottom-info {
-    margin-bottom: 3.077vw;
+  .tickets table tr .price {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
-  .ticket .bottom-info h2 {
+  .tickets table tr .price p{
     font-size: 5.897vw;
+    font-weight: bold;
   }
-  .ticket .bottom-info h2 span {
+  .tickets table tr .price p span {
     font-size: 3.59vw;
-    font-weight: 300;
+    font-weight: 400;
     color: #6a6a6a;
   }
-  .background-ticket-navigator{
+  .tickets table tr .payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    color: #4fc3f7;
+  }
+
+  .background-ticket-navigator {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 140px;
-    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, #FFF 132.88%);
+    background: linear-gradient(
+      180deg,
+      rgba(217, 217, 217, 0) 0%,
+      #fff 132.88%
+    );
   }
+
 }

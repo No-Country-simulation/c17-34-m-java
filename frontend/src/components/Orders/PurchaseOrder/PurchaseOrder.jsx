@@ -3,7 +3,7 @@ import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import { NavLink } from "react-router-dom";
 import "../orders.css";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
-import PrimaryMobileButton from './../../Buttons/mobile/PrimaryMobileButton';
+import PrimaryButton from "../../Buttons/PrimaryButton/PrimaryButton";
 const PurchaseOrder = () => {
   return (
     <>
@@ -60,15 +60,17 @@ const PurchaseOrder = () => {
             </div>
             <div className="total-price">
               <h5>Total a pagar</h5>
-              <p><span>ARS$ </span>27,500</p>
+              <p>
+                <span>ARS$ </span>27,500
+              </p>
             </div>
           </div>
 
           <div className="bottom">
             <h6>Será redirigido a Mercado Pago para finalizar la orden.</h6>
-            <PrimaryMobileButton
-            backColor="var(--color-green)"
-            >Crear orden de compra</PrimaryMobileButton>
+            <PrimaryButton backColor="var(--color-green)">
+              Crear orden de compra
+            </PrimaryButton>
           </div>
         </section>
       </div>
