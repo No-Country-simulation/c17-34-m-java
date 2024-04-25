@@ -1,11 +1,31 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import TrocaLogo from "../../../Icons/TrocaLogo/TrocaLogo";
+import { useAuth } from "../../../Context/AuthProvider";
+import { toast } from "react-toastify";
 const Navbar = () => {
+  const auth = useAuth();
+  const navigate = useNavigate();
   const { pathname } = useLocation();
+
+  const logout = () => {
+    auth.setUser(null);
+    localStorage.removeItem("troca");
+    navigate("/login");
+    toast.success(`¡Saliste de TROCA!`, {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   useEffect(() => {
     const titleMap = {
@@ -38,15 +58,25 @@ const Navbar = () => {
               <NavLink to="/wallet/upcoming">Wallet</NavLink>
             </li>
           </ul>
+
           <div className="auth-links">
-            <Link to="/" aria-label="Iniciar sesión" className="login-link">
-              Inicia sesión
-            </Link>
-            <Link to="/" aria-label="Registrarse">
-              <button className="register-button">
-                Registrate
-              </button>
-            </Link>
+            {auth.user ? (
+               <button className="register-button" onClick={logout}>Cerrar sesion</button>
+            ) : (
+              <>
+                {" "}
+                <Link
+                  to="/login"
+                  aria-label="Iniciar sesión"
+                  className="login-link"
+                >
+                  Inicia sesión
+                </Link>
+                <Link to="/register" aria-label="Registrarse">
+                  <button className="register-button">Registrate</button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>

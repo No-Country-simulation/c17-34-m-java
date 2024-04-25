@@ -6,7 +6,14 @@
   background-color: black;
 }
 .hero {
+  display: flex;
+  align-items: flex-start;
   width: min(1440px, 100%);
+}
+.hero img{
+  width: 45%;
+  height: auto;
+  aspect-ratio: 1;
 }
 .hero .content {
   padding: 7% 8% 0%;

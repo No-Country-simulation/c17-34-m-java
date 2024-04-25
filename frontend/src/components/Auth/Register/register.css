@@ -1,3 +1,55 @@
+.register-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register{
+  padding: 40px 0 100px;
+}
+.register .register-title{
+  margin-bottom: 16px;
+  font-size: 40px;
+}
+.register-info {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+.register-info span{
+  font-weight: 900;
+}
+.register-form{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.register-form div .error{
+  margin: 5px 15px 0px;
+  color: var(--color-red);
+}
+.register-form input {
+  width: 100%;
+  padding: 0 20px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: #d9d9d9;
+  font-size: 16px;
+}
+.register-form input::placeholder {
+  color: black;
+  font-size:16px;
+}
+.register-form input:focus::placeholder {
+  color: rgb(112, 112, 112);
+  font-size: 14px;
+  transition: font-size 0.2s ease;
+}
+.register-form .password{
+  display: flex;
+  gap: 10px;
+}
 @media (width <= 480px) {
   .register-header {
     margin: 8vw 6.923vw 0 6.923vw;
@@ -6,12 +58,10 @@
     align-items: center;
     font-size: 4.103vw;
   }
-
   .register-header a {
     margin-right: auto;
     text-decoration: none;
   }
-
   .register-header h1 {
     margin-right: auto;
     font-size: max(20px, 5.128vw);
@@ -21,36 +71,32 @@
     margin-bottom: 5.641vw;
     border-color: #D9D9D9;
   }
-  .register-content {
-    height: 100vh;
-    padding: 0 4.103vw 0vw 4.103vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .register{
+    padding: 0 4.103vw 8vw 4.103vw;
   }
   .register-info {
     margin-bottom: 8.205vw;
     font-size: 4.103vw;
   }
+  .register-form div .error{
+    font-size: 4.103vw;
+  }
   .register-form{
-    display: flex;
-    flex-direction: column;
-    gap: 6.41vw;
+    width: 100%;
+    gap: 5.41vw;
   }
   .register-form input {
     padding: 0 7.179vw;
     height: 12.821vw;
-    border: none;
-    outline: none;
     border-radius: 20px;
-    background: #d9d9d9;
     font-size: 4.103vw;
   }
   .register-form input::placeholder {
-    color: black;
     font-size: 4.103vw;
   }
-  .register-end-content{
-    margin-bottom: 40%;
+  .register-form .password{
+    display: flex;
+    flex-direction: column;
+    gap: 5.41vw;
   }
 }

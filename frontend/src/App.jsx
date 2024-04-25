@@ -1,10 +1,16 @@
-import './App.css'
-import Navigation from './routes/Navigation'
-
+import "./App.css";
+import AuthProvider from "./components/Context/AuthProvider";
+import Navigation from "./routes/Navigation";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
-    <Navigation/>
-  )
+    <>
+      <AuthProvider>
+        <Navigation />
+        <ToastContainer />
+      </AuthProvider>
+    </>
+  );
 }
 
-export default App
+export default App;

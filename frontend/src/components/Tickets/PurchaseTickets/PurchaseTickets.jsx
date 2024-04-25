@@ -6,7 +6,7 @@ import FloatingNavbarMobile from "./../../Layout/Mobile/FloatingNavbarMobile/Flo
 import Layout from "./../../Layout/Desktop/Layout";
 import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import TopBarP2P from "../MenuTicketHeader/TopBarP2P";
-import { MercadoPagoIcon } from './../../Icons/SocialMedia/MercadoPagoIcon';
+import { MercadoPagoIcon } from "./../../Icons/SocialMedia/MercadoPagoIcon";
 
 const PurchaseTickets = () => {
   return (
@@ -35,58 +35,83 @@ const PurchaseTickets = () => {
       <div className="tickets-container">
         <div className="tickets">
           <table>
-            <tr className="desktop-only">
-              <th>Vendedor</th>
-              <th>Evento</th>
-              <th>Precio</th>
-              <th>Método de pago</th>
-              <th>Compra / Venta</th>
-            </tr>
-            <tr>
-              <td className="seller-info">
-                <p>Troca User</p>
-                <div>
-                  <span className="mobile-only">-</span>
-                  <ThumbsUpIcon width="10px" height="10px" className="icon"/>
-                  <span>99.53%</span>
-                </div>
-              </td>
-              <td className="event-name">Miss Monique</td>
-              <td className="price">
-                <p><span>ARS$</span> 55,300</p>
-                <div className="mobile-only">
-                  <SecondaryButton text="Comprar" backColor="var(--color-green)"/>
-                </div>
-              </td>
-              <td className="payment desktop-only">
-                <MercadoPagoIcon/>
+            <thead>
+              <tr className="desktop-only">
+                <th>Vendedor</th>
+                <th>Evento</th>
+                <th>Precio</th>
+                <th>Método de pago</th>
+                <th>Compra / Venta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="seller-info">
+                  <p>Troca User</p>
+                  <div>
+                    <span className="mobile-only">-</span>
+                    <ThumbsUpIcon width="10px" height="10px" className="icon" />
+                    <span>99.53%</span>
+                  </div>
+                </td>
+                <td className="event-name">Miss Monique</td>
+                <td className="price">
+                  <p>
+                    <span>ARS$</span> 55,300
+                  </p>
+                  <div className="mobile-only">
+                    <SecondaryButton
+                      text="Comprar"
+                      backColor="var(--color-green)"
+                    />
+                  </div>
+                </td>
+                <td className="payment desktop-only">
+                  <MercadoPagoIcon />
                   Mercado Pago
-              </td>
-              <td className="desktop-only"><SecondaryButton text="Comprar" backColor="var(--color-green)" /></td>
-            </tr>
-            <tr>
-              <td className="seller-info">
-                <p>Troca User</p>
-                <div>
-                  <span className="mobile-only">-</span>
-                  <ThumbsUpIcon width="10px" height="10px" className="icon"/>
-                  <span>99.53%</span>
-                </div>
-              </td>
-              <td className="event-name">Juan Hansen (Live), 
-                transformation (Live)...</td>
-              <td className="price">
-                <p><span>ARS$</span> 27,500</p>
-                <div className="mobile-only">
-                  <SecondaryButton text="Comprar" backColor="var(--color-green)"/>
-                </div>
-              </td>
-              <td className="payment desktop-only">
-                <MercadoPagoIcon/>
+                </td>
+                <td className="desktop-only">
+                  <SecondaryButton
+                    text="Comprar"
+                    backColor="var(--color-green)"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td className="seller-info">
+                  <p>Troca User</p>
+                  <div>
+                    <span className="mobile-only">-</span>
+                    <ThumbsUpIcon width="10px" height="10px" className="icon" />
+                    <span>99.53%</span>
+                  </div>
+                </td>
+                <td className="event-name">
+                  Juan Hansen (Live), transformation (Live)...
+                </td>
+                <td className="price">
+                  <p>
+                    <span>ARS$</span> 27,500
+                  </p>
+                  <div className="mobile-only">
+                    <SecondaryButton
+                      text="Comprar"
+                      backColor="var(--color-green)"
+                    />
+                  </div>
+                </td>
+                <td className="payment desktop-only">
+                  <MercadoPagoIcon />
                   Mercado Pago
-              </td>
-              <td className="desktop-only"><SecondaryButton text="Comprar" backColor="var(--color-green)" /></td>
-            </tr>
+                </td>
+                <td className="desktop-only">
+                  <SecondaryButton
+                    text="Comprar"
+                    backColor="var(--color-green)"
+                  />
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

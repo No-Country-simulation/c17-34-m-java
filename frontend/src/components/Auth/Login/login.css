@@ -1,12 +1,70 @@
+.login-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login{
+  padding: 8.205vw 4.103vw 8.205vw 4.103vw;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-title-login {
+  margin-bottom: 16px;
+  font-size: 40px;
+}
+.login-info {
+  margin-bottom: 32px;
+  font-size: 16px;
+}
+.login-form {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.login-form div .error{
+  text-align: center;
+  margin: 8px 15px 0px;
+  color: var(--color-red);
+}
+.login-input {
+  width: 100%;
+  padding: 0 20px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background: #d9d9d9;
+  font-size: 16px;
+}
+.login-input::placeholder {
+  color: black;
+  font-size:16px;
+}
+.login-input:focus::placeholder {
+  color: rgb(112, 112, 112);
+  font-size: 14px;
+  transition: font-size 0.2s ease;
+}
+.forgot-password {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+.forgot-password a {
+  color: black;
+}
+.register-redirection{
+  margin-top: 8px;
+  text-align: center;
+}
+.register-redirection a{
+  color: black;
+}
 @media (width <= 480px) {
-  .login-container {
-    height: 100vh;
+  .login{
     padding: 8.205vw 4.103vw 8.205vw 4.103vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
-
   .welcome-title-login {
     margin-bottom: 4.615vw;
     font-size: 8.205vw;
@@ -16,37 +74,27 @@
     font-size: 4.103vw;
   }
   .login-form {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     gap: 6.41vw;
   }
-  .login-input {
-    padding: 0 7.179vw;
-    height: 12.821vw;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    background: #d9d9d9;
+  .login-form div .error{
     font-size: 4.103vw;
   }
+  .login-form div .login-input {
+    padding: 0 7.179vw;
+    height: 12.821vw;
+    border-radius: 20px;
+    font-size: 4.103vw;
+  }
+  
   .login-input::placeholder {
-    color: black;
     font-size: 4.103vw;
   }
   .forgot-password {
-    margin-top: 3.077vw;
     width: 100%;
-    text-align: right;
     font-size: 3.59vw;
-  }
-  .forgot-password a {
-    color: black;
   }
   .register-redirection{
     margin-top: 4.103vw;
-    text-align: center;
-  }
-  .register-redirection a{
-    color: black;
   }
 }
