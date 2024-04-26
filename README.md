@@ -5,7 +5,7 @@
 : is a digital ticketing platform that operates through a website. We serve as an intermediary between buyers and resellers of electronic music event tickets. Our platform provides users with a secure, straightforward, and efficient environment to explore a variety of ticket options and prices.
 
 ## Features
-- **Secure Environment:** We prioritize user safety and ensure that transactions are conducted securely.
+- **Secure Environment:** We prioritize user safety while ensuring that all active tickets and transactions are conducted securely.
 - **Simplicity:** Our user-friendly interface makes it easy for users to navigate and find the tickets they need.
 - **Variety:** Explore a wide range of ticket options for electronic music events.
 - **Competitive Pricing:** Compare prices and choose the best deal for your favorite events.
