@@ -1,3 +1,4 @@
+![Troca](https://res.cloudinary.com/deuesxnd0/image/upload/v1714095473/banner_logo_l36hca.png)
 # TROCA
 
 ## Overview
@@ -16,9 +17,10 @@ Join us today and experience the convenience of TROCA! 🎵🎟️
 ## Members
 ![Members](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 - Backend
-  - [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/)
   - [Matias Aaron](https://www.linkedin.com/in/matias-sosa-a03560242/)
   - [Nestor Frias](https://www.linkedin.com/in/nesarifr/)
+- Full Stack
+  - [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/)
 - QA Tester
   - [Adriana Brizuela](https://www.linkedin.com/in/adriana-brizuela)
   - [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/)
