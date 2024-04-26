@@ -8,10 +8,11 @@ import { useAuth } from "../../../Context/AuthProvider";
 const MainNavbarMobile = () => {
   const auth = useAuth();
   const idUser = auth.user && auth.user.id;
+  const idProfile = auth.user && auth.user.profile.id;
   const location = useLocation();
   const isActiveWallet =
-    location.pathname.startsWith(`/wallet/upcoming/${idUser}`) ||
-    location.pathname.startsWith(`/wallet/completed/${idUser}`);
+    location.pathname.startsWith(`/wallet/upcoming/${idProfile}`) ||
+    location.pathname.startsWith(`/wallet/completed/${idProfile}`);
   return (
     <div className="mobile-navbar-container mobile-only">
       <div className="mobile-header-content">
@@ -30,7 +31,7 @@ const MainNavbarMobile = () => {
         </li>
         <li>
           <NavLink
-            to={`/wallet/upcoming/${idUser}`}
+            to={`/wallet/upcoming/${idProfile}`}
             className={isActiveWallet ? "active-link-wallet" : ""}
           >
             <WalletIcon width="24px" height="24px"/>

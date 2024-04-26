@@ -14,7 +14,7 @@ import { useAuth } from "../../Context/AuthProvider";
 const UpcomingTickets = () => {
   const navigate = useNavigate();
   const auth = useAuth();
-  const idUser = auth.user && auth.user.id;
+  const idUser = auth.user && auth.user.profile.id;
   const [isLoading, setIsLoading] = useState(true);
   const [tickets, setTickets] = useState([]);
   const getTickets = async () => {

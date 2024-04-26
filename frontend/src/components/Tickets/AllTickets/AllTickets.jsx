@@ -19,7 +19,7 @@ const AllTickets = () => {
   const getTickets = async () => {
     try {
       const response = await axios.get(
-        `https://troca-prod.onrender.com/ticket/all`
+        `https://troca-prod-main.onrender.com/ticket/all`
       );
       setTickets(response.data.data);
       setIsLoading(false);
