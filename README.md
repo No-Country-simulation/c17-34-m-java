@@ -15,12 +15,12 @@ Join us today and experience the convenience of TROCA! 🎵🎟️
 
 ## Members
 ![Members](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) 
-- [Adriana Brizuela](https://www.linkedin.com/in/adriana-brizuela)
-- [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/)
-- [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/)
-- [Matias Aaron](https://www.linkedin.com/in/matias-sosa-a03560242/)
-- [Nestor Frias](https://www.linkedin.com/in/nesarifr/)
-- [Santiago Vergara](https://www.linkedin.com/in/santiago-vergara-87b4b9233/)
+- [Adriana Brizuela](https://www.linkedin.com/in/adriana-brizuela) - QA Tester
+- [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/) - UX/UI
+- [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/) - QA Tester
+- [Matias Aaron](https://www.linkedin.com/in/matias-sosa-a03560242/) - UX/UI
+- [Nestor Frias](https://www.linkedin.com/in/nesarifr/) - UX/UI
+- [Santiago Vergara](https://www.linkedin.com/in/santiago-vergara-87b4b9233/) - UX/UI
 
 | [Adriana Brizuela](https://www.linkedin.com/in/adriana-brizuela)  | [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/)  |  [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/) | [Matias Aaron](https://www.linkedin.com/in/matias-sosa-a03560242/)  |  [Nestor Frias](https://www.linkedin.com/in/nesarifr/) |[Santiago Vergara](https://www.linkedin.com/in/santiago-vergara-87b4b9233/)|
 |---|---|---|---|---|---|
