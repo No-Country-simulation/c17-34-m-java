@@ -67,7 +67,8 @@ PROD_DB_NAME= **
 PROD_DB_USERNAME= **
 PROD_DB_PASSWORD= **
 ```
+
 ## Screenshots
-![Screenshot1](https://res.cloudinary.com/deuesxnd0/image/upload/v1714096591/presentacion_desktop_twa0bb.png) ![Screenshot2](https://res.cloudinary.com/deuesxnd0/image/upload/v1714096585/presentacion_mobile_pjivr8.png)
+![Screenshot1](screenshotTroca1.png) ![Screenshot2](screenshotTroca2.png)
 
 For more information, visit our official website or check out our GitHub repository. You can also catch us on the Disc Golf Network. 🚀🎉
