@@ -1,0 +1,133 @@
+@media (width <= 480px) {
+  .order-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6.154vw;
+  }
+  .order-content {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .order-content .top small {
+    display: block;
+    font-size: 4.103vw;
+    font-weight: 400;
+    margin-bottom: 1vw;
+  }
+  .order-content .top ul {
+    width: 100%;
+    margin-bottom: 6.154vw;
+    padding: 0.769vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    list-style-type: none;
+    border-radius: 5.128vw;
+  }
+  .order-content .top ul a {
+    padding: 1.795vw 14.85vw;
+    font-size: 4.103vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6a6a6a;
+    border-radius: 5.128vw;
+    text-decoration: none;
+  }
+
+  .order-content .top ul .purchase-order.active {
+    color: white;
+    background-color: var(--color-green);
+  }
+  .order-content .top ul .sales-order.active {
+    color: white;
+    background-color: var(--color-red);
+  }
+  .order-content .top form {
+    display: flex;
+    flex-direction: column;
+  }
+  .order-content .top form label {
+    color: #6a6a6a;
+    font-size: 3.59vw;
+    margin: 3.077vw 5.128vw 0.513vw;
+  }
+  .order-content .top form input {
+    margin-bottom: 3.077vw;
+    padding: 0 7.179vw;
+    height: 12.821vw;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: #d9d9d9;
+    font-size: 4.103vw;
+  }
+  .order-content .top form input::placeholder {
+    color: #6a6a6a;
+    font-size: 4.103vw;
+  }
+  .order-content .top .payment-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .order-content .top .payment-method h3 {
+    font-size: 4.103vw;
+    font-weight: 400;
+    color: #6a6a6a;
+  }
+  .order-content .top .payment-method div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.026vw;
+    color: #4fc3f7;
+  }
+  .order-content .top .payment-info {
+    margin: 6.154vw 0 3.846vw;
+    font-size: 3.59vw;
+    font-weight: 400;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  .order-content .top .payment-info h4 {
+    margin-bottom: 1.026vw;
+  }
+  .order-content .top .payment-info p {
+    margin-bottom: 6.154vw;
+  }
+  .order-content .top .total-price {
+    margin-bottom: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .order-content .top .total-price h5 {
+    color: #6a6a6a;
+    font-size: 4.103vw;
+    font-weight: 400;
+    line-height: 137.5%;
+  }
+  .order-content .top .total-price p {
+    font-size: 5.897vw;
+    font-weight: 700;
+  }
+  .order-content .top .total-price span {
+    color: #6a6a6a;
+    font-size: 3.59vw;
+    font-weight: 300;
+  }
+  .order-content .bottom {
+    text-align: center;
+    margin-bottom: 8.205vw;
+  }
+  .order-content .bottom h6 {
+    margin-bottom: 3.077vw;
+    color: #6a6a6a;
+    font-size: 3.333vw;
+    font-weight: 400;
+  }
+}

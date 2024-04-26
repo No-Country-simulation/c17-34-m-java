@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6b2cfbd-187e-449f-919a-5033e3d6349d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Auth/Login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Auth/Login/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Auth/Register/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Auth/Register/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Events/events.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Events/events.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Mobile/MainNavbar/MainMobileNavbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Mobile/MainNavbar/mainMobileNavbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Mobile/TicketNavigator/TicketNavigator.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Layout/Mobile/TicketNavigator/ticketNavigator.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Tickets/PurchaseTickets/PurchaseTickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tickets/PurchaseTickets/PurchaseTickets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Tickets/SalesTickets/SalesTickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tickets/SalesTickets/SalesTickets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Tickets/tickets.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tickets/tickets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileEdit/UserProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileEdit/UserProfileEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileView/UserProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileView/UserProfileView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileView/userProfileView.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserProfileView/userProfileView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserRating/UserRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserProfile/UserRating/UserRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Wallet/CompletedTickets/CompletedTickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Wallet/CompletedTickets/CompletedTickets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Wallet/UpcomingTickets/UpcomingTickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Wallet/UpcomingTickets/UpcomingTickets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Wallet/WalletMenuHeader/WalletMenuHeader.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Wallet/WalletMenuHeader/walletMenuHeader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Wallet/wallet.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Wallet/wallet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/routes/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/Navigation.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2fFNcwQK0H657xLwUenO60D4TNW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "front",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6b2cfbd-187e-449f-919a-5033e3d6349d" name="Changes" comment="" />
+      <created>1713392951528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713392951528</updated>
+      <workItem from="1713392952867" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

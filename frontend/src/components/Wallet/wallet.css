@@ -1,0 +1,21 @@
+@media (width <= 480px) {
+  .wallet-navbar {
+   
+    display: flex;
+    justify-content: space-between;
+  }
+  .wallet-navbar a {
+    width: 100%;
+    padding: 8.462vw 13.821vw 0;
+    padding-bottom: 3.077vw;
+    text-decoration: none;
+    color: #818181;
+    font-size: 4.615vw;
+    font-weight: 600;
+    border-bottom: 2px solid #818181;
+  }
+  .wallet-navbar a.active {
+    color: black;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+}

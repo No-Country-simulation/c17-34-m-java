@@ -1,0 +1,13 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 400px;
+    width: 100%;
+}
+footer .troca-logo{
+    fill: white;
+    width: 30%;
+    height: auto;
+}

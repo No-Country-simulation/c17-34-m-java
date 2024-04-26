@@ -1,0 +1,70 @@
+.navbar-container {
+  height: 64px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 5px -5px rgba(82, 82, 82, 0.3);
+  background-color: rgb(0, 0, 0);
+}
+.navbar {
+  width: min(1440px, 100%);
+  padding: 0 156px 0 32px;
+}
+.navbar a {
+  display: inline-block;
+  font: 16px;
+  color: white;
+}
+.navbar .nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  gap: 32px;
+}
+.navbar ul a {
+  text-decoration: none;
+}
+.navbar ul a:hover {
+  color: #bcff2f;
+}
+.navbar ul a.active {
+  color: #bcff2f;
+}
+.navbar ul .troca-logo div {
+  fill: #c3fe15;
+  width: 120px;
+  height: auto;
+}
+
+.navbar .nav-menu .auth-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.navbar .nav-menu .auth-links .login-link:hover{
+  color: #bcff2f;
+}
+.navbar .nav-menu .auth-links .register-button {
+  padding: 10px 18px;
+  border: 1px solid #bcff2f;
+  border-radius: 20px;
+  background-color: black;
+  color: #bcff2f;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in;
+}
+.navbar .nav-menu .auth-links .register-button:hover {
+  cursor: pointer;
+  background-color: #bcff2f;
+  color: black;
+  transition: background-color 0.2s ease-in;
+}

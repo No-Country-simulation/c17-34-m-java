@@ -1,0 +1,87 @@
+@media (width <= 480px) {
+  .offers-navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .offers-navbar a {
+    width: 100%;
+    padding: 8.462vw 13.821vw 0;
+    padding-bottom: 3.077vw;
+    text-decoration: none;
+    color: #818181;
+    font-size: 4.615vw;
+    font-weight: 600;
+    border-bottom: 2px solid #818181;
+  }
+  .offers-navbar a.active {
+    color: black;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+  .offers-container {
+    padding-bottom: 30vw;
+    display: flex;
+    justify-content: center;
+  }
+  .offers {
+    width: 90%;
+  }
+  .offer {
+    margin-top: 3.077vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #d9d9d9;
+  }
+  .offer .header-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.513vw;
+  }
+  .offer .header-info p {
+    font-size: 4.103vw;
+    font-weight: 400;
+    color: #000000;
+  }
+  .offer .header-info span {
+    font-size: 11px;
+    font-weight: 400;
+    color: #6a6a6a;
+  }
+  .offer h1 {
+    font-size: 6.667vw;
+  }
+  .offer .bottom-info {
+    margin-bottom: 3.077vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .offer .bottom-info h2 {
+    font-size: 5.897vw;
+  }
+  .offer .bottom-info h2 span {
+    font-size: 3.59vw;
+    font-weight: 300;
+    color: #6a6a6a;
+  }
+  .offer .bottom-info p {
+    color: black;
+    font-size: 3.59vw;
+    font-weight: 700;
+  }
+  .offer .bottom-info p span{
+    color: #6a6a6a;
+    font-weight: 400;
+  }
+  .background-offer-navigator {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(
+      180deg,
+      rgba(217, 217, 217, 0) 0%,
+      #fff 132.88%
+    );
+  }
+}

@@ -1,0 +1,63 @@
+@media (width <= 480px) {
+  .mobile-navbar-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  .mobile-navbar-container a{
+    color: #8B8B8B;
+  }
+  .mobile-navbar-container a.active{
+    color: white;
+  }
+  
+  .mobile-header-content {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-header-content div {
+    position: absolute;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  .mobile-header-content a {
+    background-color: black;
+    border-radius: 50%;
+    padding: 18px;
+    display: flex;
+  }
+  .mobile-main-content {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+  }
+  .mobile-main-content li {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    color: white;
+  }
+  .mobile-main-content li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #8B8B8B;
+  }
+  .mobile-header-content .p2p-link{
+    color: #ffffff;
+  }
+  .mobile-main-content li a.active-link-wallet{
+    color: white;
+  }
+}

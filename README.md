@@ -1,6 +1,7 @@
 ![Troca](https://res.cloudinary.com/deuesxnd0/image/upload/v1714095473/banner_logo_l36hca.png)
 ## Overview
 
+
 >TROCA
 : is a digital ticketing platform that operates through a website. We serve as an intermediary between buyers and resellers of electronic music event tickets. Our platform provides users with a secure, straightforward, and efficient environment to explore a variety of ticket options and prices.
 
@@ -72,3 +73,4 @@ PROD_DB_PASSWORD= **
 ![Screenshot1](screenshotTroca1.png) ![Screenshot2](screenshotTroca2.png)
 
 For more information, visit our official website or check out our GitHub repository. You can also catch us on the Disc Golf Network. 🚀🎉
+
