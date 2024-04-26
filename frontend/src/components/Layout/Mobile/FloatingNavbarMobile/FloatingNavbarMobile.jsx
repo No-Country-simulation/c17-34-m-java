@@ -6,7 +6,9 @@ import { ClipboardIcon } from "../../../Icons/Basic/ClipboardIcon";
 import { CommentIcon } from "../../../Icons/Basic/CommentIcon";
 import { UserProfileIcon } from "../../../Icons/Basic/UserProfileIcon";
 
+
 const FloatingNavbarMobile = () => {
+  
   const location = useLocation();
   const isP2PActive = location.pathname.startsWith('/tickets/purchase') || location.pathname.startsWith('/tickets/sale');
   const isOffersActive = location.pathname.startsWith('/offers/active') || location.pathname.startsWith('/offers/completed');

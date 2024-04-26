@@ -1,6 +1,24 @@
 @media (width <= 480px) {
+  .empty-wallet-container{
+    margin-top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .empty-wallet{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    text-align: center;
+  }
+  .empty-wallet h1{
+    font-weight: 400;
+    font-size: 4.615vw;
+  }
   .wallet-navbar {
-   
     display: flex;
     justify-content: space-between;
   }

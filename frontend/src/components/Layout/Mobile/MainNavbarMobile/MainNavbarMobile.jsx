@@ -4,11 +4,14 @@ import { NavLink, useLocation } from "react-router-dom";
 import { WalletIcon } from "../../../Icons/Basic/WalletIcon";
 import "./mainNavbarMobile.css";
 import { UsersIcon } from "../../../Icons/Basic/UsersIcon";
+import { useAuth } from "../../../Context/AuthProvider";
 const MainNavbarMobile = () => {
+  const auth = useAuth();
+  const idUser = auth.user && auth.user.id;
   const location = useLocation();
   const isActiveWallet =
-    location.pathname.startsWith("/wallet/upcoming") ||
-    location.pathname.startsWith("/wallet/completed");
+    location.pathname.startsWith(`/wallet/upcoming/${idUser}`) ||
+    location.pathname.startsWith(`/wallet/completed/${idUser}`);
   return (
     <div className="mobile-navbar-container mobile-only">
       <div className="mobile-header-content">
@@ -27,7 +30,7 @@ const MainNavbarMobile = () => {
         </li>
         <li>
           <NavLink
-            to="/wallet/upcoming"
+            to={`/wallet/upcoming/${idUser}`}
             className={isActiveWallet ? "active-link-wallet" : ""}
           >
             <WalletIcon width="24px" height="24px"/>

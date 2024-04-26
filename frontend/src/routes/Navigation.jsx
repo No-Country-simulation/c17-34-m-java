@@ -27,8 +27,8 @@ const Navigation = () => {
           <Route path="/ticket/purchase/:ticketId" element={<BuyTicket/>} />
           <Route path="/ticket/:ticketId" element={<ExtendedTicketView />} />
           <Route path="/ticket/add" element={<AddManualTicket />} />
-          <Route path="/wallet/upcoming" element={<UpcomingTickets />} />
-          <Route path="/wallet/completed" element={<CompletedTickets />} />
+          <Route path="/wallet/upcoming/:idUser" element={<UpcomingTickets />} />
+          <Route path="/wallet/completed/:idUser" element={<CompletedTickets />} />
           <Route path="/order/purchase" element={<PurchaseOrder />} />
           <Route path="/order/sales" element={<SalesOrder />} />
           <Route path="/offers/active" element={<ActiveOffers />} />
@@ -39,6 +39,7 @@ const Navigation = () => {
         <Route element={<Login />} path="/login" />
         <Route element={<Register />} path="/register" />
         <Route path="/tickets/purchase" element={<AllTickets />} />
+        <Route path="/tickets/sale" element={<SalesTickets />} />
         <Route path="/tickets/purchase/event/:idEvent" element={<PurchaseTickets />} />
         <Route path="/tickets/sale/event/:idEvent" element={<SalesTickets />} />
         <Route path="/user/profile" element={<UserProfileView />} />

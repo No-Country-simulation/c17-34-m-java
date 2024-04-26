@@ -1,13 +1,15 @@
 import React from "react";
 import Profile1 from "../../../assets/images/Profile/profile1.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import "../wallet.css";
 import CompactTicketView from "../../Tickets/CompactTicketView/CompactTicketView";
 import MainNavbarMobile from "./../../Layout/Mobile/MainNavbarMobile/MainNavbarMobile";
-
 import Party2 from "../../../assets/images/Parties/party2.jpeg";
+import { useAuth } from "../../Context/AuthProvider";
 const CompletedTickets = () => {
+  const auth = useAuth();
+  const idUser = auth.user && auth.user.id;
   return (
     <>
       <TopBarMobile linkTo="/" title="Tus entradas">
@@ -20,8 +22,8 @@ const CompletedTickets = () => {
       </TopBarMobile>
       <div>
         <ul className="wallet-navbar">
-          <NavLink to="/wallet/upcoming">Próximas</NavLink>
-          <NavLink to="/wallet/completed">Finalizadas</NavLink>
+          <NavLink  to={`/wallet/upcoming/${idUser}`}>Próximas</NavLink>
+          <NavLink  to={`/wallet/completed/${idUser}`}>Finalizadas</NavLink>
         </ul>
       </div>
       <CompactTicketView

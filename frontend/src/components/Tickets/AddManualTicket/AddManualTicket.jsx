@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./addManualTicket.css";
 import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import PrimaryButton from "./../../Buttons/PrimaryButton/PrimaryButton";
+import { CheckIcon } from "../../Icons/Basic/CheckIcon";
+import { Link } from "react-router-dom";
 const AddManualTicket = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const inputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    inputRef.current.click();
+  };
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    setIsLoading(true);
+
+    // Simulando la carga de imagen con un temporizador
+    setTimeout(() => {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setUploadedImage(reader.result);
+        setIsLoading(false);
+      };
+
+      reader.readAsDataURL(file);
+    }, 3000); // 3 segundos para simular la validación
+  };
   return (
     <>
       <TopBarMobile linkTo="/offers/active" title="Agregar entrada" />
@@ -37,11 +66,27 @@ const AddManualTicket = () => {
                           donde las cuatro (4) esquinas del QR sean visibles.
                         </p>
                       </div>
+                      <input
+                        type="file"
+                        style={{ display: "none" }}
+                        ref={inputRef}
+                        onChange={handleImageUpload}
+                      />
                       <PrimaryButton
+                        type="file"
                         text="Añadir captura de pantalla"
                         backColor="#E1E1E1"
                         fontColor="black"
+                        onClick={handleButtonClick}
                       />
+                       {isLoading && <div>Validando...</div>}
+                      {uploadedImage && !isLoading && (
+                        <div className="ticket-validation">
+                          <CheckIcon width="30px" height="30px"/>
+                          <p className="status">Entrada validada correctamente</p>
+                        </div>
+                      
+                      )}
                     </div>
                   </section>
                   <section>
@@ -53,16 +98,19 @@ const AddManualTicket = () => {
                         por su venta de entradas
                       </p>
                       <PrimaryButton
-                        text="Vincular"
-                        backColor="#E1E1E1"
-                        fontColor="black"
+                        text="Vinculada"
+                        backColor="var(--color-green)"
+                        fontColor="white"
                       />
                     </div>
                   </section>
                 </div>
               </div>
               <div className="bottom">
-                <PrimaryButton text="Continuar" />
+                <Link to="/order/sales">
+                  <PrimaryButton text="Continuar" />
+                </Link>
+                
               </div>
             </div>
           </div>

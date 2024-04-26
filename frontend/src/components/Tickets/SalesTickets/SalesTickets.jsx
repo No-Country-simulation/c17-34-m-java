@@ -47,11 +47,11 @@ const SalesTickets = () => {
             <tbody>
               <tr>
                 <td className="seller-info">
-                  <p>Troca User</p>
+                  <p>Lucas</p>
                   <div>
                     <span className="mobile-only">-</span>
                     <ThumbsUpIcon width="10px" height="10px" className="icon" />
-                    <span>99.53%</span>
+                    <span>99.99%</span>
                   </div>
                 </td>
                 <td className="event-name">Miss Monique</td>
@@ -76,11 +76,11 @@ const SalesTickets = () => {
               </tr>
               <tr>
                 <td className="seller-info">
-                  <p>Troca User</p>
+                  <p>Joaquin</p>
                   <div>
                     <span className="mobile-only">-</span>
                     <ThumbsUpIcon width="10px" height="10px" className="icon" />
-                    <span>99.53%</span>
+                    <span>99.86%</span>
                   </div>
                 </td>
                 <td className="event-name">

@@ -4,16 +4,16 @@ import axios from "axios";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(localStorage.getItem("troca") || "");
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("troca")) || null);
   const loginAction = async (user) => {
     try {
       const response = await axios.post(
         `https://troca-prod-main.onrender.com/user/login?email=${user.email}&password=${user.password}`
       );
-      const userData  = response.data;
+      const {user: userData}  = response.data;
       if (userData) {
         setUser(userData);
-        localStorage.setItem("troca", userData);
+        localStorage.setItem("troca", JSON.stringify(userData));
         return;
       }
       throw new Error(res.message);

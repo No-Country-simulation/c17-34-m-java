@@ -26,35 +26,17 @@ const ActiveOffers = () => {
         <div className="offers">
           <section className="offer">
             <div className="header-info">
-              <p>Troca User</p>
+              <p>Santiago</p>
               <span>-</span>
               <ThumbsUpIcon width="10px" height="10px" />
               <span>99.53%</span>
             </div>
             <h1>
-              <span style={{ color: "var(--color-red)" }}>Venta </span>Miss
-              Monique
+              <span style={{ color: "var(--color-green)" }}>Compra </span>Recoleta Underground Experience
             </h1>
             <div className="bottom-info">
               <h2>
-                <span>ARS$</span> 55,300
-              </h2>
-              <SecondaryButton  text="Pausada" backColor="#6A6A6A"/>
-            </div>
-          </section>
-          <section className="offer">
-            <div className="header-info">
-              <p>Troca User</p>
-              <span>-</span>
-              <ThumbsUpIcon width="10px" height="10px" />
-              <span>99.53%</span>
-            </div>
-            <h1>
-              <span style={{ color: "var(--color-green)" }}>Compra </span>Ben bohmer & Eelke kleijn
-            </h1>
-            <div className="bottom-info">
-              <h2>
-                <span>ARS$</span> 27,500
+                <span>ARS$</span> 24000
               </h2>
               <SecondaryButton text="Activa" fontColor="var(--color-active)"/>
             </div>

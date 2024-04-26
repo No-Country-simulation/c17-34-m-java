@@ -8,9 +8,9 @@ import { useAuth } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
 const Navbar = () => {
   const auth = useAuth();
+  const idUser = auth.user && auth.user.id;
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
   const logout = () => {
     auth.setUser(null);
     localStorage.removeItem("troca");
@@ -56,7 +56,7 @@ const Navbar = () => {
             </li>
             {auth.user ? (
               <li>
-                <NavLink to="/wallet/upcoming">Wallet</NavLink>
+                <NavLink  to={`/wallet/upcoming/${idUser}`}>Wallet</NavLink>
               </li>
             ) : (
               <></>

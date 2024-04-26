@@ -6,6 +6,15 @@
     .add-manual-ticket{
         width: 90%;
     }
+    .ticket-validation{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: var(--color-green);
+    }
+    .ticket-validation .status{
+        color: var(--color-green);
+    }
     .add-manual-ticket .content{
         height: 100vh;
         display: flex;

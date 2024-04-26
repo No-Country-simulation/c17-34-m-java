@@ -9,10 +9,13 @@ import TopBarP2P from "../MenuTicketHeader/TopBarP2P";
 import axios from "axios";
 import { Ticket } from "../Ticket/Ticket";
 import { initMercadoPago } from "@mercadopago/sdk-react";
+import SpinnerLoader from "../../SpinnerLoader/SpinnerLoader";
+import { PlusIcon } from "../../Icons/Basic/PlusIcon";
 initMercadoPago(import.meta.env.VITE_PUBLICKEY, { locale: "es-AR" });
 const PurchaseTickets = () => {
   const navigate = useNavigate();
   const { idEvent } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [tickets, setTickets] = useState([]);
   const getTickets = async () => {
     try {
@@ -20,14 +23,15 @@ const PurchaseTickets = () => {
         `https://troca-prod-main.onrender.com/ticket/event/${idEvent}`
       );
       setTickets(response.data.data);
+      setIsLoading(false);
     } catch (error) {
       navigate("/not-found");
       console.error("Error al obtener los tickets:", error);
     }
   };
   useEffect(() => {
-    window.scrollTo(0, 0);
     getTickets();
+    setIsLoading(true);
   }, [idEvent]);
   return (
     <Layout>
@@ -44,6 +48,11 @@ const PurchaseTickets = () => {
             <li>
               <NavLink to="/tickets/sale">Venta</NavLink>
             </li>
+            <li>
+              <Link to="/ticket/add">
+                <PlusIcon width="24px" height="24px" />
+              </Link>
+            </li>
           </ul>
           <div className="desktop-only">
             <Link to="/ticket/add">
@@ -52,28 +61,34 @@ const PurchaseTickets = () => {
           </div>
         </div>
       </div>
-      <div className="tickets-container">
-        <div className="tickets">
-          <table>
-            <thead>
-              <tr className="desktop-only">
-                <th>Vendedor</th>
-                <th>Evento</th>
-                <th>Precio</th>
-                <th>Método de pago</th>
-                <th>Compra / Venta</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tickets.map((ticket) => (
-                <tr key={ticket.id}>
-                  <Ticket ticket={ticket} />
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <>
+        {isLoading ? (
+          <SpinnerLoader />
+        ) : (
+          <div className="tickets-container">
+            <div className="tickets">
+              <table>
+                <thead>
+                  <tr className="desktop-only">
+                    <th>Vendedor</th>
+                    <th>Evento</th>
+                    <th>Precio</th>
+                    <th>Método de pago</th>
+                    <th>Compra / Venta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tickets.map((ticket) => (
+                    <tr key={ticket.id}>
+                      <Ticket ticket={ticket} />
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </>
     </Layout>
   );
 };

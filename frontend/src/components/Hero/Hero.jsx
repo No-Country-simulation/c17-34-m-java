@@ -1,6 +1,7 @@
 import React from "react";
 import "./hero.css";
 import Mockup from "../../assets/images/Mockup/mockup_hero.png";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="hero-container desktop-only">
@@ -11,7 +12,9 @@ const Hero = () => {
             Tu Marketplace para comprar y vender entradas para tus eventos
             favoritos.
           </p>
-          <button>Compra tus entradas</button>
+          <Link to="/tickets/purchase">
+            <button>Compra tus entradas</button>
+          </Link>
         </div>
         <img src={Mockup} alt="mockup" />
       </section>

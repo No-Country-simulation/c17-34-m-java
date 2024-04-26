@@ -4,7 +4,23 @@ import { NavLink } from "react-router-dom";
 import "../orders.css";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
 import PrimaryButton from './../../Buttons/PrimaryButton/PrimaryButton';
+import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 const SalesOrder = () => {
+  const navigate = useNavigate();
+  const handleBuy = () => {
+    navigate("/tickets/purchase");
+    toast.success(`¡Orden de venta creada exitosamente!`, {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
   return (
     <>
       <TopBarMobile title="Crea una oferta" linkTo="/offers/active" />
@@ -26,14 +42,15 @@ const SalesOrder = () => {
             </ul>
             <h2>Detalles de su orden</h2>
             <form>
-              <label htmlFor="eventName">Precio unitario</label>
+              <label htmlFor="eventName">Entrada</label>
               <input
                 type="text"
                 id="eventName"
                 name="eventName"
                 placeholder="Seleccione un evento de su wallet"
+                value="Recoleta Underground Experience"
               />
-              <label htmlFor="price">Evento</label>
+              <label htmlFor="price">Precio</label>
               <input
                 type="number"
                 id="price"
@@ -62,7 +79,7 @@ const SalesOrder = () => {
           </div>
 
           <div className="bottom">
-            <PrimaryButton backColor="var(--color-red)" text="Crear orden de venta"/>
+            <PrimaryButton onClick={handleBuy} backColor="var(--color-red)" text="Crear orden de venta"/>
           </div>
         </section>
       </div>

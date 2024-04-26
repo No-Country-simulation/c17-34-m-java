@@ -1,11 +1,11 @@
-import { useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import { ThumbsUpIcon } from "../../Icons/Basic/ThumbsUpIcon";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
 import axios from "axios";
 import { useEffect } from "react";
 import "../tickets.css";
-
+import { useAuth } from "../../Context/AuthProvider";
 
 const urlBack = import.meta.env.VITE_URLBACK;
 
@@ -17,6 +17,7 @@ const profile = {
 };
 
 export const Ticket = ({ ticket }) => {
+  const auth = useAuth();
   const { id, owner, event, price, moneda } = ticket;
 
   const location = useLocation();
@@ -72,14 +73,22 @@ export const Ticket = ({ ticket }) => {
       <td className="event-name">{event.name}</td>
       <td className="price">
         <p>
-          <span>{moneda}</span> {price}
+          <span>ARS$</span> {price}
         </p>
         <div className="mobile-only">
-          <SecondaryButton
-            onClick={handleBuy}
-            text="Comprar"
-            backColor="var(--color-green)"
-          />
+          {auth.user ? (
+            <>
+              <SecondaryButton
+                onClick={handleBuy}
+                text="Comprar"
+                backColor="var(--color-green)"
+              />
+            </>
+          ) : (
+            <Link to="/login">
+              <SecondaryButton text="Comprar" backColor="var(--color-green)" />
+            </Link>
+          )}
         </div>
       </td>
       <td className="payment desktop-only">
@@ -87,11 +96,19 @@ export const Ticket = ({ ticket }) => {
         Mercado Pago
       </td>
       <td className="desktop-only">
-        <SecondaryButton
-          onClick={handleBuy}
-          text="Comprar"
-          backColor="var(--color-green)"
-        />
+        {auth.user ? (
+          <>
+            <SecondaryButton
+              onClick={handleBuy}
+              text="Comprar"
+              backColor="var(--color-green)"
+            />
+          </>
+        ) : (
+          <Link to="/login">
+            <SecondaryButton text="Comprar" backColor="var(--color-green)" />
+          </Link>
+        )}
       </td>
     </>
   );

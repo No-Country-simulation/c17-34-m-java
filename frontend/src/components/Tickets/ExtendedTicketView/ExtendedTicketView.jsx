@@ -3,6 +3,7 @@ import "./extendedTicketView.css";
 import TopBarMobile from "./../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
 import Qr from "../../../assets/images/qr/qr.png";
+import { useAuth } from "../../Context/AuthProvider";
 const ExtendedTicketView = ({
   eventName,
   eventDate,
@@ -13,6 +14,9 @@ const ExtendedTicketView = ({
   purchaseDate,
   total,
 }) => {
+
+  const auth = useAuth();
+  const idUser = auth.user && auth.user.id;
   eventName = "Ben bohmer & Eelke kleijn";
   eventDate = "Martes 30/04";
   address = "Colectora ruta panamericana N9, KM 60, Cardales";
@@ -22,7 +26,7 @@ const ExtendedTicketView = ({
   total = "28,325";
   return (
     <>
-      <TopBarMobile linkTo="/wallet/upcoming" title={eventName} />
+      <TopBarMobile linkTo={`/wallet/upcoming/${idUser}`} title={eventName} />
       <div className="extended-ticket-container">
         <section className="extended-ticket">
           <div className="content">
