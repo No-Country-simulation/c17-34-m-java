@@ -14,16 +14,32 @@
 Join us today and experience the convenience of TROCA! 🎵🎟️
 
 ## Members
+![Members](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) 
 - Adriana Brizuela 
-- Agustin Lorca https://www.linkedin.com/in/agustin-lorca/
-- Ivan Rojas https://www.linkedin.com/in/ivanrojasorg/
-- Matias Aaron 
-- Nestor Frias
-- Santiago Vergara https://www.linkedin.com/in/santiago-vergara-87b4b9233/
+- [Agustin Lorca](https://www.linkedin.com/in/agustin-lorca/)
+- [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/)
+- [Matias Aaron](https://www.linkedin.com/in/matias-sosa-a03560242/)
+- [Nestor Frias](https://www.linkedin.com/in/nesarifr/)
+- [Santiago Vergara](https://www.linkedin.com/in/santiago-vergara-87b4b9233/)
 
 
+
+## Dev Database
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+- Create a database in your local machine
+- Use the following credentials to connect to the database
+  - Database Name: trocaDataBase
+  - Username: postgres
+  - Password: root
+  - Host: localhost
+  - Port: 3008
+- Run the following command to create a docker image
+  ```bash
+  docker run --name trocaDataBase -e POSTGRES_PASSWORD=root -e POSTGRES_USER=postgres -e POSTGRES_DB=trocaDataBase -p 3008:5432 -d postgres
+  ```
   
 ## Dev Server
+![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 - Run maven install to build the project
 - Run the following command to start the server
   - `mvn spring-boot:run`
@@ -31,15 +47,22 @@ Join us today and experience the convenience of TROCA! 🎵🎟️
   - The server will start on the following URL: https://troca-prod.onrender.com/
 
 ## Swagger
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 - The swagger documentation can be accessed at the following URL
-  -https://troca-prod.onrender.com/swagger-ui
+  - https://troca-prod.onrender.com/swagger-ui
 
 ## PROD Server
 - Run maven install to build the project
 - Run the following command to start the server
   - `mvn spring-boot:run`
 
+```properties
+spring_profiles_active = **   
+PROD_DB_HOST= **
+PROD_DB_PORT= **
+PROD_DB_NAME= **
+PROD_DB_USERNAME= **
+PROD_DB_PASSWORD= **
+```
+
 For more information, visit our official website or check out our GitHub repository. You can also catch us on the Disc Golf Network. 🚀🎉
-
-
-
