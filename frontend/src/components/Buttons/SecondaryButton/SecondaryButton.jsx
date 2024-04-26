@@ -2,10 +2,10 @@ import React from "react";
 import "./secondaryButton.css"
 const SecondaryButton = ({
   text,
-  onClick,
   type,
   backColor,
   fontColor,
+  onClick
 }) => {
   const buttonStyles = {
     backgroundColor: backColor || "black",

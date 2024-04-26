@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
   const loginAction = async (user) => {
     try {
       const response = await axios.post(
-        `https://troca-prod.onrender.com/user/login?email=${user.email}&password=${user.password}`
+        `https://troca-prod-main.onrender.com/user/login?email=${user.email}&password=${user.password}`
       );
       const userData  = response.data;
       if (userData) {

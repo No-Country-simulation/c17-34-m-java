@@ -25,7 +25,7 @@ const UpcomingTickets = () => {
         <CompactTicketView
           img={Party1}
           eventDate="30/04 Aldea ME Press.:"
-          eventName="Ben bohmer & Eelke kleijn"
+          eventName="Tango Techno Night"
         />
         <MainNavbarMobile />
       </Layout>

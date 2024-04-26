@@ -162,7 +162,7 @@
     width: 90%;
   }
   .tickets table tr {
-    margin-bottom: 0;
+    margin-bottom: 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;

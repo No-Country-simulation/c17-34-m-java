@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import Events from "../../components/Events/Events";
 import Search from "../../components/Search/Search";
@@ -6,23 +6,22 @@ import MainNavbarMobile from "../../components/Layout/Mobile/MainNavbarMobile/Ma
 import TopBarMobile from "../../components/Layout/Mobile/TopBarMobile/TopBarMobile";
 import Profile1 from "../../assets/images/Profile/profile1.jpg";
 import Layout from "../../components/Layout/Desktop/Layout";
-import Hero from '../../components/Hero/Hero';
+import Hero from "../../components/Hero/Hero";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../components/Context/AuthProvider";
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
+  const auth = useAuth();
+  const navigate = useNavigate();
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 480);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+    if (isMobile && auth.user === null) {
+      navigate("/login");
+    }
+  }, [isMobile, navigate]);
   return (
     <>
       <Layout>
-        <Hero/>
+        <Hero />
         <TopBarMobile>
           <img
             src={Profile1}

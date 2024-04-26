@@ -1,4 +1,5 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoutes from "./PrivateRoutes";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Login from "../components/Auth/Login/Login";
@@ -15,76 +16,36 @@ import PurchaseOrder from "../components/Orders/PurchaseOrder/PurchaseOrder";
 import SalesOrder from "../components/Orders/SalesOrder/SalesOrder";
 import ExtendedTicketView from "../components/Tickets/ExtendedTicketView/ExtendedTicketView";
 import AddManualTicket from "../components/Tickets/AddManualTicket/AddManualTicket";
-
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login/>,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/wallet/upcoming",
-    element: <UpcomingTickets />,
-  },
-  {
-    path: "/wallet/completed",
-    element: <CompletedTickets />,
-  },
-  {
-    path: "/tickets/purchase",
-    element: <PurchaseTickets />,
-  },
-  {
-    path: "/tickets/sale",
-    element: <SalesTickets />,
-  },
-  {
-    path: "/ticket/add",
-    element: <AddManualTicket/>
-  },
-  {
-    path: "/ticket/1",
-    element: <ExtendedTicketView/>
-  },
-  {
-    path: "/offers/active",
-    element: <ActiveOffers/>
-  },
-  {
-    path:"/offers/completed",
-    element: <CompletedOffers/>
-  },
-  {
-    path: "/order/purchase",
-    element: <PurchaseOrder/>
-  },
-  {
-    path: "/order/sales",
-    element: <SalesOrder/>
-  },
-  {
-    path: "/user/profile",
-    element: <UserProfileView />,
-  },
-  {
-    path: "/user/profile/edit",
-    element: <UserProfileEdit />,
-  },
-  {
-    path: "/*",
-    element: <NotFound />,
-  },
-]);
+import BuyTicket from "../components/Tickets/BuyTicket/BuyTicket";
+import AllTickets from "../components/Tickets/AllTickets/AllTickets";
 
 const Navigation = () => {
-  return <RouterProvider router={routes} />;
+  return (
+    <Router>
+      <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route path="/ticket/purchase/:ticketId" element={<BuyTicket/>} />
+          <Route path="/ticket/:ticketId" element={<ExtendedTicketView />} />
+          <Route path="/ticket/add" element={<AddManualTicket />} />
+          <Route path="/wallet/upcoming" element={<UpcomingTickets />} />
+          <Route path="/wallet/completed" element={<CompletedTickets />} />
+          <Route path="/order/purchase" element={<PurchaseOrder />} />
+          <Route path="/order/sales" element={<SalesOrder />} />
+          <Route path="/offers/active" element={<ActiveOffers />} />
+          <Route path="/offers/completed" element={<CompletedOffers />} />
+          <Route path="/user/profile/edit" element={<UserProfileEdit />} />
+        </Route>
+        <Route element={<Home />} path="/" exact />
+        <Route element={<Login />} path="/login" />
+        <Route element={<Register />} path="/register" />
+        <Route path="/tickets/purchase" element={<AllTickets />} />
+        <Route path="/tickets/purchase/event/:idEvent" element={<PurchaseTickets />} />
+        <Route path="/tickets/sale/event/:idEvent" element={<SalesTickets />} />
+        <Route path="/user/profile" element={<UserProfileView />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default Navigation;

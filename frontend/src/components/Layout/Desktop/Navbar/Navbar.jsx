@@ -54,14 +54,20 @@ const Navbar = () => {
             <li>
               <NavLink to="/tickets/purchase">Mercado P2P</NavLink>
             </li>
-            <li>
-              <NavLink to="/wallet/upcoming">Wallet</NavLink>
-            </li>
+            {auth.user ? (
+              <li>
+                <NavLink to="/wallet/upcoming">Wallet</NavLink>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
 
           <div className="auth-links">
             {auth.user ? (
-               <button className="register-button" onClick={logout}>Cerrar sesion</button>
+              <button className="register-button" onClick={logout}>
+                Cerrar sesion
+              </button>
             ) : (
               <>
                 {" "}

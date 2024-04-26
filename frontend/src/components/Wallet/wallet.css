@@ -1,5 +1,6 @@
 @media (width <= 480px) {
   .wallet-navbar {
+   
     display: flex;
     justify-content: space-between;
   }

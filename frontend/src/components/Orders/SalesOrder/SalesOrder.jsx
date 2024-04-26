@@ -62,9 +62,7 @@ const SalesOrder = () => {
           </div>
 
           <div className="bottom">
-            <PrimaryButton backColor="var(--color-red)">
-              Crear orden de venta
-            </PrimaryButton>
+            <PrimaryButton backColor="var(--color-red)" text="Crear orden de venta"/>
           </div>
         </section>
       </div>

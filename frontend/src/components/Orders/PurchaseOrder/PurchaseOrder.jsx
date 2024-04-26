@@ -68,9 +68,7 @@ const PurchaseOrder = () => {
 
           <div className="bottom">
             <h6>Será redirigido a Mercado Pago para finalizar la orden.</h6>
-            <PrimaryButton backColor="var(--color-green)">
-              Crear orden de compra
-            </PrimaryButton>
+            <PrimaryButton backColor="var(--color-green)" text=" Crear orden de compra"/>
           </div>
         </section>
       </div>

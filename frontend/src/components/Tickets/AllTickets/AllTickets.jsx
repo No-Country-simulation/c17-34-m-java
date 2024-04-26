@@ -10,14 +10,14 @@ import axios from "axios";
 import { Ticket } from "../Ticket/Ticket";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 initMercadoPago(import.meta.env.VITE_PUBLICKEY, { locale: "es-AR" });
-const PurchaseTickets = () => {
+const AllTickets = () => {
   const navigate = useNavigate();
   const { idEvent } = useParams();
   const [tickets, setTickets] = useState([]);
   const getTickets = async () => {
     try {
       const response = await axios.get(
-        `https://troca-prod-main.onrender.com/ticket/event/${idEvent}`
+        `https://troca-prod.onrender.com/ticket/all`
       );
       setTickets(response.data.data);
     } catch (error) {
@@ -78,4 +78,4 @@ const PurchaseTickets = () => {
   );
 };
 
-export default PurchaseTickets;
+export default AllTickets;

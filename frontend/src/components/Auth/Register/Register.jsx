@@ -45,7 +45,7 @@ const Register = () => {
     };
 
     try {
-      const response = await axios.post('https://troca-prod.onrender.com/user/subscribe', user);
+      const response = await axios.post('https://troca-prod-main.onrender.com/user/subscribe', user);
       navigateTo('/login')
       toast.success(`¡Registro exitoso! Ya sos parte de TROCA`, {
         position: "top-center",
