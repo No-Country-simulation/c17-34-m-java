@@ -1,6 +1,4 @@
 ![Troca](https://res.cloudinary.com/deuesxnd0/image/upload/v1714095473/banner_logo_l36hca.png)
-# TROCA
-
 ## Overview
 
 >TROCA
