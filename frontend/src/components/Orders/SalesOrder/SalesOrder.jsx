@@ -39,7 +39,7 @@ const SalesOrder = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const data = {
       event: {
         id: selectedTicket.event.id,
@@ -61,6 +61,16 @@ const SalesOrder = () => {
       );
       if (response.status === 201) {
         navigate("/tickets/purchase");
+        toast.success(`¡Orden de venta creada exitosamente!`, {
+          position: "top-center",
+          autoClose: 2500,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
         console.log("Orden de venta creada exitosamente.");
       } else {
         console.error("Error al crear la orden de venta.");
@@ -72,16 +82,14 @@ const SalesOrder = () => {
 
   const handleTicketChange = (event) => {
     const selectedId = event.target.value;
-    console.log("selectedId", selectedId);
-  
     setSelectedTicketId(selectedId);
-    const ticket = tickets.find((ticket) => ticket.id === selectedId);
+    const ticket = tickets.find((ticket) => ticket.id == selectedId);
     setSelectedTicket(ticket);
   };
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
   };
-  
+
   return (
     <>
       <TopBarMobile title="Crea una oferta" linkTo="/offers/active" />
