@@ -8,16 +8,15 @@ import "../tickets.css";
 import { useAuth } from "../../Context/AuthProvider";
 
 const urlBack = import.meta.env.VITE_URLBACK;
-
-const profile = {
-  // MOCK DATA profile del comprador
-  id: 1,
-  name: "Lalo",
-  email: "test_user_435626719@testuser.com",
-};
-
 export const Ticket = ({ ticket }) => {
+
+
   const auth = useAuth();
+  const profile = {
+    id: auth.user.id,
+    name: auth.user.profile.name,
+    email: auth.user.email,
+  };
   const { id, owner, event, price, moneda } = ticket;
 
   const location = useLocation();
