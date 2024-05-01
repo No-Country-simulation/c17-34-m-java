@@ -14,7 +14,7 @@ const CompletedOffers = () => {
         <FloatingNavbarMobile />
       </div>
       <TopBarMobile linkTo="/tickets/purchase" title="Ofertas">
-        <Link to="/order/purchase">
+        <Link to="/order/sales">
           <PlusIcon width="24px" height="24px" />
         </Link>
       </TopBarMobile>

@@ -34,7 +34,7 @@ const Events = () => {
             {events.map((event) => (
               <section className="event" key={event.id}>
                 <figure>
-                  <img src={Party1} className="event-header-img" />
+                  <img src={event.img} className="event-header-img" />
                 </figure>
                 <div className="event-content">
                   <h2>30/04 Aldea ME Press.:</h2>

@@ -13,18 +13,25 @@ import SpinnerLoader from "../../SpinnerLoader/SpinnerLoader";
 import { PlusIcon } from "../../Icons/Basic/PlusIcon";
 initMercadoPago(import.meta.env.VITE_PUBLICKEY, { locale: "es-AR" });
 const AllTickets = () => {
-  const navigate = useNavigate();
+ 
   const [isLoading, setIsLoading] = useState(true);
   const [tickets, setTickets] = useState([]);
   const getTickets = async () => {
     try {
       const response = await axios.get(
-        `https://troca-prod-main.onrender.com/ticket/all`
+        `https://troca-prod-main.onrender.com/ticket/all`,
+        {
+          params: {
+            onService: true,
+          }
+        }
       );
+      {
+       
+      }
       setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
-      navigate("/not-found");
       console.error("Error al obtener los tickets:", error);
     }
   };
@@ -47,7 +54,7 @@ const AllTickets = () => {
             <li>
               <NavLink to="/tickets/sale">Venta</NavLink>
             </li>
-            <li>
+            <li className="mobile-only">
               <Link to="/ticket/add">
                 <PlusIcon width="24px" height="24px" />
               </Link>
@@ -77,11 +84,20 @@ const AllTickets = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tickets.map((ticket) => (
-                    <tr key={ticket.id}>
-                      <Ticket ticket={ticket} />
-                    </tr>
-                  ))}
+                  {
+                    tickets ? (
+                      tickets.map((ticket) => (
+                        <tr key={ticket.id}>
+                          <Ticket ticket={ticket} />
+                        </tr>
+                      ))
+                    )
+                    :(
+                      <div>
+                        No hay tickets disponibles
+                      </div>
+                    )
+                  }
                 </tbody>
               </table>
             </div>

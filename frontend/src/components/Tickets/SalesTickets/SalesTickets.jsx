@@ -7,6 +7,7 @@ import Layout from "./../../Layout/Desktop/Layout";
 import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import TopBarP2P from "../MenuTicketHeader/TopBarP2P";
 import { MercadoPagoIcon } from "./../../Icons/SocialMedia/MercadoPagoIcon";
+import { PlusIcon } from "../../Icons/Basic/PlusIcon";
 
 const SalesTickets = () => {
   return (
@@ -23,6 +24,11 @@ const SalesTickets = () => {
             </li>
             <li>
               <NavLink to="/tickets/sale">Venta</NavLink>
+            </li>
+            <li className="mobile-only">
+              <Link to="/ticket/add">
+                <PlusIcon width="24px" height="24px" />
+              </Link>
             </li>
           </ul>
           <div className="desktop-only">

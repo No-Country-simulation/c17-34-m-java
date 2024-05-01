@@ -25,7 +25,6 @@ const PurchaseTickets = () => {
       setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
-      navigate("/not-found");
       console.error("Error al obtener los tickets:", error);
     }
   };
@@ -48,7 +47,7 @@ const PurchaseTickets = () => {
             <li>
               <NavLink to="/tickets/sale">Venta</NavLink>
             </li>
-            <li>
+            <li className="mobile-only">
               <Link to="/ticket/add">
                 <PlusIcon width="24px" height="24px" />
               </Link>

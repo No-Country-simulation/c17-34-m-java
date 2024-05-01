@@ -63,14 +63,14 @@ export const Ticket = ({ ticket }) => {
   return (
     <>
       <td className="seller-info">
-        <p>{owner.name}</p>
+        <p>{owner && owner.name}</p>
         <div>
           <span className="mobile-only">-</span>
           <ThumbsUpIcon width="10px" height="10px" className="icon" />
           <span>99.5%</span>
         </div>
       </td>
-      <td className="event-name">{event.name}</td>
+      <td className="event-name">{event && event.name}</td>
       <td className="price">
         <p>
           <span>ARS$</span> {price}

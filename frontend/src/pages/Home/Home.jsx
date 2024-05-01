@@ -4,11 +4,13 @@ import Events from "../../components/Events/Events";
 import Search from "../../components/Search/Search";
 import MainNavbarMobile from "../../components/Layout/Mobile/MainNavbarMobile/MainNavbarMobile";
 import TopBarMobile from "../../components/Layout/Mobile/TopBarMobile/TopBarMobile";
-import Profile1 from "../../assets/images/Profile/profile1.jpg";
 import Layout from "../../components/Layout/Desktop/Layout";
 import Hero from "../../components/Hero/Hero";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../components/Context/AuthProvider";
+import Dropdown from "../../components/Layout/Mobile/Dropdown/Dropdown";
+
+
 const Home = () => {
   const auth = useAuth();
   const navigate = useNavigate();
@@ -23,12 +25,7 @@ const Home = () => {
       <Layout>
         <Hero />
         <TopBarMobile>
-          <img
-            src={Profile1}
-            width="50px"
-            height="50px"
-            style={{ borderRadius: "50%" }}
-          />
+          <Dropdown/>
         </TopBarMobile>
         <Search />
         <Events />

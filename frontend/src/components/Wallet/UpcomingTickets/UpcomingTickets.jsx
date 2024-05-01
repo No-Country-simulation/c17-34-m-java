@@ -11,6 +11,7 @@ import axios from "axios";
 import SpinnerLoader from "../../SpinnerLoader/SpinnerLoader";
 import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import { useAuth } from "../../Context/AuthProvider";
+import Dropdown from "../../Layout/Mobile/Dropdown/Dropdown";
 const UpcomingTickets = () => {
   const navigate = useNavigate();
   const auth = useAuth();
@@ -26,7 +27,6 @@ const UpcomingTickets = () => {
       setIsLoading(false);
     } catch (error) {
       setTickets([]);
-      console.log("tickets: ", tickets);
       console.error("Error al obtener los tickets:", error);
     }
   };
@@ -37,12 +37,7 @@ const UpcomingTickets = () => {
   return (
     <Layout>
       <TopBarMobile linkTo="/" title="Tus entradas">
-        <img
-          src={Profile1}
-          width="50px"
-          height="50px"
-          style={{ borderRadius: "50%" }}
-        />
+       <Dropdown/>
       </TopBarMobile>
       <ul className="wallet-navbar">
       
