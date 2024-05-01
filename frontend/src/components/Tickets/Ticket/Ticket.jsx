@@ -13,9 +13,9 @@ export const Ticket = ({ ticket }) => {
 
   const auth = useAuth();
   const profile = {
-    id: auth.user.id,
-    name: auth.user.profile.name,
-    email: auth.user.email,
+    id: auth.user && auth.user.id,
+    name: auth.user && auth.user.profile.name,
+    email: auth.user && auth.user.email,
   };
   const { id, owner, event, price, moneda } = ticket;
 
