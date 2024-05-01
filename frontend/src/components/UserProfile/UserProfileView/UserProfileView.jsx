@@ -10,6 +10,7 @@ import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import SecondaryButton from './../../Buttons/SecondaryButton/SecondaryButton';
 import Layout from './../../Layout/Desktop/Layout';
 import FloatingNavbarMobile from './../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile';
+import { UserAuthMP } from "../AuthMP/UserAuthMP";
 const UserProfileView = () => {
   return (
     <Layout>
@@ -32,8 +33,7 @@ const UserProfileView = () => {
                 <span>example@email.com</span>
               </div>
               <div className="mp-info">
-                <MercadoPagoIcon width="14px" height="14px" />
-                <span>User Name</span>
+                <UserAuthMP />
               </div>
             </div>
             <div className="edit-profile">
