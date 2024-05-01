@@ -56,7 +56,9 @@
     font-size: 3.59vw;
     margin: 3.077vw 5.128vw 0.513vw;
   }
-  .order-content .top form input {
+  .order-content .top form input,
+  .order-content .top form select {
+   
     margin-bottom: 3.077vw;
     padding: 0 7.179vw;
     height: 12.821vw;
@@ -65,7 +67,9 @@
     border-radius: 20px;
     background: #d9d9d9;
     font-size: 4.103vw;
+    
   }
+  
   .order-content .top form input::placeholder {
     color: #6a6a6a;
     font-size: 4.103vw;
@@ -129,50 +133,6 @@
     color: #6a6a6a;
     font-size: 3.333vw;
     font-weight: 400;
-  }
-  .accordion-button {
-    text-align: left;
-    cursor: pointer;
-    width: 100%;
-    padding: 0 7vw;
-    height: 12.821vw;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    background: #d9d9d9;
-    font-size: 4.103vw;
-  }
-  .accordion-button-open{
-    border-radius: 20px 20px 0 0;
-  }
-  .arrow {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .arrow.down {
-    transform: rotate(0deg);
-  }
-  
-  .arrow.up {
-    transform: rotate(180deg);
-  }
-  
-  .accordion-content {
-    overflow: hidden;
-    width: 100%;
-    height: fit-content; 
-    margin-bottom: 3.077vw;
-    padding: 4vw 5vw;
-    border-radius: 0 0 20px 20px;
-    border: none;
-    outline: none;
-    background: #d9d9d9;
-    font-size: 4.103vw;
-    transition: height 0.3s ease-in-out;
-  }
-  
-  .accordion.open .accordion-content {
-    height: fit-content; 
   }
   
 }

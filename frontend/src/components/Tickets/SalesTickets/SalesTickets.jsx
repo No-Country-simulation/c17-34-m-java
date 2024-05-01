@@ -26,13 +26,13 @@ const SalesTickets = () => {
               <NavLink to="/tickets/sale">Venta</NavLink>
             </li>
             <li className="mobile-only">
-              <Link to="/ticket/add">
+              <Link to="/order/sales">
                 <PlusIcon width="24px" height="24px" />
               </Link>
             </li>
           </ul>
           <div className="desktop-only">
-            <Link to="/ticket/add">
+            <Link to="/order/sales">
               <SecondaryButton text="Crear Oferta" />
             </Link>
           </div>

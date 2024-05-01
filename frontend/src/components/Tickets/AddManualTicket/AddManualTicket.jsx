@@ -19,8 +19,7 @@ const AddManualTicket = () => {
     if (!file) return;
 
     setIsLoading(true);
-
-    // Simulando la carga de imagen con un temporizador
+    
     setTimeout(() => {
       const reader = new FileReader();
 
@@ -30,7 +29,7 @@ const AddManualTicket = () => {
       };
 
       reader.readAsDataURL(file);
-    }, 3000); // 3 segundos para simular la validación
+    }, 3000);
   };
   return (
     <>

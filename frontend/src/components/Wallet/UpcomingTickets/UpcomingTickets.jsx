@@ -64,9 +64,9 @@ const UpcomingTickets = () => {
               <div>
                 {tickets.map((ticket) => (
                   <CompactTicketView
-                    img={Party1}
+                    img={ticket.event.img}
                     eventDate="30/04 Aldea ME Press.:"
-                    eventName="Tango Techno Night"
+                    eventName={ticket.event.name}
                   />
                 ))}
               </div>
