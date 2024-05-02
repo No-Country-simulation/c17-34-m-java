@@ -74,5 +74,5 @@ PROD_DB_PASSWORD= **
 ## Screenshots
 ![Screenshot1](screenshotTroca1.png) ![Screenshot2](screenshotTroca2.png)
 
-For more information, visit our official website https://c17-34-m-java.vercel.app/ or check out our GitHub repository. You can also catch us on the Disc Golf Network. 🚀🎉
+For more information, visit our official website https://c17-34-m-java.vercel.app/ or check out our GitHub repository https://github.com/No-Country/c17-34-m-java. 🚀🎉
 
