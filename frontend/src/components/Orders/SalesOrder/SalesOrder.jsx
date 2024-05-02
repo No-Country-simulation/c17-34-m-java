@@ -8,7 +8,7 @@ import { useAuth } from "../../Context/AuthProvider";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { PlusIcon } from './../../Icons/Basic/PlusIcon';
+import { PlusIcon } from "./../../Icons/Basic/PlusIcon";
 const SalesOrder = () => {
   const navigate = useNavigate();
   const auth = useAuth();
@@ -29,6 +29,7 @@ const SalesOrder = () => {
       setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       setTickets([]);
       console.error("Error al obtener los tickets:", error);
     }
@@ -114,22 +115,38 @@ const SalesOrder = () => {
             <form onSubmit={handleSubmit}>
               <label htmlFor="eventName">Entrada</label>
               {tickets.length == 0 ? (
-                <div className="add-manual-ticket">
-                  <PlusIcon width="28px" height="28px" fill="#BCFF2F"/>
-                  <Link to="/ticket/add">Añadir ticket manual</Link>
-                </div>
+                <>
+                  <select
+                    className="accordion-content"
+                    onChange={handleTicketChange}
+                  >
+                    {isLoading && <option>Cargando tickets...</option>}
+                    <option value="">No hay tickets disponibles</option>
+                  </select>
+                  <div className="add-manual-ticket">
+                    <PlusIcon width="28px" height="28px" fill="#BCFF2F" />
+                    <Link to="/ticket/add">Añadir ticket manual</Link>
+                  </div>
+                </>
               ) : (
-                <select
-                  className="accordion-content"
-                  onChange={handleTicketChange}
-                >
-                  <option value="">Seleccione un ticket de su wallet</option>
-                  {tickets.map((ticket) => (
-                    <option key={ticket.id} value={ticket.id}>
-                      {ticket.event.name}
-                    </option>
-                  ))}
-                </select>
+                <>
+                  <select
+                    className="accordion-content"
+                    onChange={handleTicketChange}
+                  >
+                     {isLoading && <option>Cargando tickets...</option>}
+                    <option value="">Seleccione un ticket de su wallet</option>
+                    {tickets.map((ticket) => (
+                      <option key={ticket.id} value={ticket.id}>
+                        {ticket.event.name}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="add-manual-ticket">
+                    <PlusIcon width="28px" height="28px" fill="#BCFF2F" />
+                    <Link to="/ticket/add">Añadir ticket manual</Link>
+                  </div>
+                </>
               )}
               <label htmlFor="price">Precio</label>
               <input
