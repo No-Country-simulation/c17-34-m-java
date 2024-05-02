@@ -42,7 +42,6 @@ export const UserAuthMP = () => {
       await axios.get(
         `${urlBack}/mp/oauth?code=${paramCode}&state=${paramState}`
       );
-      navigate("/");
     } catch (error) {
       console.log(error);
     }

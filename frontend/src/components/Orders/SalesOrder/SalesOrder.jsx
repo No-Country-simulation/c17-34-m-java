@@ -26,7 +26,7 @@ const SalesOrder = () => {
       const response = await axios.get(
         `https://troca-prod-main.onrender.com/ticket/profile/${idUser}`
       );
-      //setTickets(response.data.data);
+      setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
       setTickets([]);
