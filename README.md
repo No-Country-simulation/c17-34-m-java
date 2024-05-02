@@ -23,6 +23,8 @@ Join us today and experience the convenience of TROCA! 🎵🎟️
 - QA Tester
   - [Adriana Brizuela](https://www.linkedin.com/in/adriana-brizuela)
   - [Ivan Rojas](https://www.linkedin.com/in/ivanrojasorg/)
+- Team Leader
+  -  [Yosmely Bermudez](https://www.linkedin.com/in/yosmely-bermudez)
 - UX/UI
   - [Santiago Vergara](https://www.linkedin.com/in/santiago-vergara-87b4b9233/)
 
