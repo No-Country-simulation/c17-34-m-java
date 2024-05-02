@@ -7,15 +7,18 @@ import { MercadoPagoIcon } from "./../../Icons/SocialMedia/MercadoPagoIcon";
 import Profile1 from "../../../assets/images/Profile/profile1.jpg";
 import UserRating from "../UserRating/UserRating";
 import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
-import SecondaryButton from './../../Buttons/SecondaryButton/SecondaryButton';
-import Layout from './../../Layout/Desktop/Layout';
-import FloatingNavbarMobile from './../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile';
+import SecondaryButton from "./../../Buttons/SecondaryButton/SecondaryButton";
+import Layout from "./../../Layout/Desktop/Layout";
+import FloatingNavbarMobile from "./../../Layout/Mobile/FloatingNavbarMobile/FloatingNavbarMobile";
 import { UserAuthMP } from "../AuthMP/UserAuthMP";
+import { useAuth } from "../../Context/AuthProvider";
 const UserProfileView = () => {
+  const auth = useAuth();
+  const user = auth.user;
   return (
     <Layout>
       <div className="desktop-only">
-        <FloatingNavbarMobile/>
+        <FloatingNavbarMobile />
       </div>
       <TopBarMobile linkTo="/tickets/purchase">
         <Link to="/">
@@ -26,20 +29,20 @@ const UserProfileView = () => {
         <div className="user-profile-view content">
           <div className="user-profile-view content-bottom">
             <img src={Profile1} width="80px" height="80px" />
-            <h1>UserName</h1>
+            <h1>{user.profile.name} {user.profile.lastname}</h1>
             <div className="user-info">
               <div className="email-info">
                 <CheckIcon width="14px" height="14px" />
-                <span>example@email.com</span>
-              </div>
-              <div className="mp-info">
-                <UserAuthMP />
+                <span>{user.email}</span>
               </div>
             </div>
+            <div className="mp-info">
+              <UserAuthMP />
+            </div>
             <div className="edit-profile">
-              <Link to="/user/profile/edit">
-                <SecondaryButton text="Editar"/>
-              </Link>
+              {/* <Link to="/user/profile/edit">
+                <SecondaryButton text="Editar" />
+              </Link> */}
             </div>
           </div>
         </div>

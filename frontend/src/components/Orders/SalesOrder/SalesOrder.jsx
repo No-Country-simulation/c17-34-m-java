@@ -8,6 +8,7 @@ import { useAuth } from "../../Context/AuthProvider";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { PlusIcon } from './../../Icons/Basic/PlusIcon';
 const SalesOrder = () => {
   const navigate = useNavigate();
   const auth = useAuth();
@@ -25,7 +26,7 @@ const SalesOrder = () => {
       const response = await axios.get(
         `https://troca-prod-main.onrender.com/ticket/profile/${idUser}`
       );
-      setTickets(response.data.data);
+      //setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
       setTickets([]);
@@ -112,17 +113,24 @@ const SalesOrder = () => {
             <h2>Detalles de su orden</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="eventName">Entrada</label>
-              <select
-                className="accordion-content"
-                onChange={handleTicketChange}
-              >
-                <option value="">Seleccione un ticket de su wallet</option>
-                {tickets.map((ticket) => (
-                  <option key={ticket.id} value={ticket.id}>
-                    {ticket.event.name}
-                  </option>
-                ))}
-              </select>
+              {tickets.length == 0 ? (
+                <div className="add-manual-ticket">
+                  <PlusIcon width="28px" height="28px" fill="#BCFF2F"/>
+                  <Link to="/ticket/add">Añadir ticket manual</Link>
+                </div>
+              ) : (
+                <select
+                  className="accordion-content"
+                  onChange={handleTicketChange}
+                >
+                  <option value="">Seleccione un ticket de su wallet</option>
+                  {tickets.map((ticket) => (
+                    <option key={ticket.id} value={ticket.id}>
+                      {ticket.event.name}
+                    </option>
+                  ))}
+                </select>
+              )}
               <label htmlFor="price">Precio</label>
               <input
                 type="number"

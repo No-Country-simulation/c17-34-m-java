@@ -7,7 +7,6 @@ import { UsersIcon } from "../../../Icons/Basic/UsersIcon";
 import { useAuth } from "../../../Context/AuthProvider";
 const MainNavbarMobile = () => {
   const auth = useAuth();
-  const idUser = auth.user && auth.user.id;
   const idProfile = auth.user && auth.user.profile.id;
   const location = useLocation();
   const isActiveWallet =

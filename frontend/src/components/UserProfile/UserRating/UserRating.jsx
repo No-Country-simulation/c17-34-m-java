@@ -9,7 +9,7 @@ const UserRating = () => {
   const rating1 = initalValue + positiveRating;
   const rating2 = initalValue + negativeRating;
   return (
-    <div className="user-rating-container">
+    <div className="user-rating-container mobile-only">
       <div className="user-rating">
         <h2>Rating</h2>
         <div className="rating-bars">

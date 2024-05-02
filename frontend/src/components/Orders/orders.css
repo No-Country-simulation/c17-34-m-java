@@ -56,6 +56,26 @@
     font-size: 3.59vw;
     margin: 3.077vw 5.128vw 0.513vw;
   }
+  .order-content .top form .add-manual-ticket {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+    background-color: black;
+    width: 100%;
+    margin-bottom: 3.077vw;
+    padding: 0 7.179vw;
+    height: 12.821vw;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+  }
+  .order-content .top form .add-manual-ticket a{
+    text-decoration: none;
+    color: white;
+    font-size: 4.3vw;
+    font-weight: bold;
+  }
   .order-content .top form input,
   .order-content .top form select {
    

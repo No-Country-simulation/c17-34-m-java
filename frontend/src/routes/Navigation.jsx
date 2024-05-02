@@ -33,6 +33,7 @@ const Navigation = () => {
           <Route path="/order/sales" element={<SalesOrder />} />
           <Route path="/offers/active" element={<ActiveOffers />} />
           <Route path="/offers/completed" element={<CompletedOffers />} />
+          <Route path="/user/profile" element={<UserProfileView />} />
           <Route path="/user/profile/edit" element={<UserProfileEdit />} />
         </Route>
         <Route element={<Home />} path="/" exact />
@@ -42,7 +43,6 @@ const Navigation = () => {
         <Route path="/tickets/sale" element={<SalesTickets />} />
         <Route path="/tickets/purchase/event/:idEvent" element={<PurchaseTickets />} />
         <Route path="/tickets/sale/event/:idEvent" element={<SalesTickets />} />
-        <Route path="/user/profile" element={<UserProfileView />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

@@ -9,6 +9,10 @@
   .top-bar-mobile li h1{
     font-size: 5.128vw;
     letter-spacing: -0.105vw;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width: 220px; 
   }
   .top-bar-mobile li a{
     text-decoration: none;

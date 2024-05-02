@@ -1,7 +1,7 @@
 import axios from "axios";
 import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MercadoPagoIcon } from "../../Icons/SocialMedia/MercadoPagoIcon";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 

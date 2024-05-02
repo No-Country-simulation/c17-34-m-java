@@ -19,7 +19,7 @@ const TopBarMobile = ({ children, linkTo, title }) => {
           </li>
         )}
         <li>
-          <h1 style={{ fontSize: "5.128vw", letterSpacing: "-0.105vw" }}>
+          <h1 >
             {title}
           </h1>
         </li>

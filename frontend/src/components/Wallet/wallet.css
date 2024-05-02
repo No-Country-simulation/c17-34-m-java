@@ -1,9 +1,67 @@
+.wallet-navbar {
+  width: min(1440px, 100%);
+  padding: 22px 178px;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  list-style-type: none;
+}
+.wallet-navbar a {
+  position: relative;
+  text-decoration: none;
+  color: #6a6a6a;
+  font-size: 16px;
+}
+.wallet-navbar a:hover{
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 20px 0px;
+  font-weight: bold;
+  transition: color 0.2s ease-in;
+}
+.wallet-navbar a.active {
+  color: black;
+  border-bottom: 3px solid black;
+  padding: 20px 10px;
+  font-weight: bold;
+}
+.wallet-container{
+  padding: 40px 120px 120px;
+}
+.wallet-tickets a{
+  color: currentColor;
+  text-decoration: none;
+}
+.empty-wallet-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.wallet-ticket-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+}
 @media (width <= 480px) {
-  .empty-wallet-container{
-    margin-top: 40%;
+  .wallet-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 38vw;
+    padding: 0;
+  }
+  .wallet-ticket-list{
+    gap: 0;
+  }
+  .wallet-tickets{
+    width: 90%;
+  }
+  
+  .empty-wallet-container{
+    margin-top: 40%;
   }
   .empty-wallet{
     width: 80%;
@@ -19,10 +77,13 @@
     font-size: 4.615vw;
   }
   .wallet-navbar {
+    padding: 0;
     display: flex;
     justify-content: space-between;
+    gap: 0;
   }
   .wallet-navbar a {
+    position: static;
     width: 100%;
     padding: 8.462vw 13.821vw 0;
     padding-bottom: 3.077vw;
@@ -32,8 +93,19 @@
     font-weight: 600;
     border-bottom: 2px solid #818181;
   }
+  .wallet-navbar a:hover{
+    color: #818181;
+    border-bottom: 2px solid #818181;
+    padding: 8.462vw 13.821vw 0;
+    padding-bottom: 3.077vw;
+    font-weight: 600;
+    transition: none;
+  }
   .wallet-navbar a.active {
+    font-weight: normal;
     color: black;
+    padding: 8.462vw 13.821vw 0;
+    padding-bottom: 3.077vw;
     border-bottom: 2px solid rgb(0, 0, 0);
   }
 }

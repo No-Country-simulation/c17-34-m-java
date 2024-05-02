@@ -8,7 +8,7 @@ import { useAuth } from "../../../Context/AuthProvider";
 import { toast } from "react-toastify";
 const Navbar = () => {
   const auth = useAuth();
-  const idUser = auth.user && auth.user.id;
+  const idUser = auth.user && auth.user.profile.id;
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const logout = () => {
@@ -30,7 +30,8 @@ const Navbar = () => {
   useEffect(() => {
     const titleMap = {
       "/": "Home",
-      "/candidatos": "Candidatos",
+      "/tickets/purchase": "P2P",
+      "/tickets/sale": "P2P",
     };
     document.title = titleMap[pathname] || "Troca";
     window.scrollTo({ top: 0, behavior: "smooth" });

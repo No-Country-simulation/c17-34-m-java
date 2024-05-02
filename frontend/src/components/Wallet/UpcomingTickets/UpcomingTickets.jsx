@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Profile1 from "../../../assets/images/Profile/profile1.jpg";
-import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import TopBarMobile from "../../Layout/Mobile/TopBarMobile/TopBarMobile";
 import "../wallet.css";
 import CompactTicketView from "../../Tickets/CompactTicketView/CompactTicketView";
@@ -13,7 +12,6 @@ import SecondaryButton from "../../Buttons/SecondaryButton/SecondaryButton";
 import { useAuth } from "../../Context/AuthProvider";
 import Dropdown from "../../Layout/Mobile/Dropdown/Dropdown";
 const UpcomingTickets = () => {
-  const navigate = useNavigate();
   const auth = useAuth();
   const idUser = auth.user && auth.user.profile.id;
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +25,7 @@ const UpcomingTickets = () => {
       setIsLoading(false);
     } catch (error) {
       setTickets([]);
+      setIsLoading(false);
       console.error("Error al obtener los tickets:", error);
     }
   };
@@ -37,43 +36,44 @@ const UpcomingTickets = () => {
   return (
     <Layout>
       <TopBarMobile linkTo="/" title="Tus entradas">
-       <Dropdown/>
+        <Dropdown />
       </TopBarMobile>
       <ul className="wallet-navbar">
-      
-        <NavLink  to={`/wallet/upcoming/${idUser}`}>Próximas</NavLink>
-        <NavLink  to={`/wallet/completed/${idUser}`}>Finalizadas</NavLink>
+        <NavLink to={`/wallet/upcoming/${idUser}`}>Próximas</NavLink>
+        <NavLink to={`/wallet/completed/${idUser}`}>Finalizadas</NavLink>
       </ul>
-      <>
-        {tickets.length === 0 ? (
-          <div className="empty-wallet-container">
-            <div className="empty-wallet">
-              <h1>Todavía no tenés entradas adquiridas</h1>
-              <Link to="/">
-                <SecondaryButton
-                  text="Buscá eventos"
-                />
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div>
-            {isLoading ? (
-              <SpinnerLoader />
-            ) : (
-              <div>
-                {tickets.map((ticket) => (
-                  <CompactTicketView
-                    img={ticket.event.img}
-                    eventDate="30/04 Aldea ME Press.:"
-                    eventName={ticket.event.name}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-      </>
+      <div className="wallet-container">
+        <div className="wallet-tickets">
+          {isLoading ? (
+            <SpinnerLoader />
+          ) : (
+            <>
+              {!tickets.length ? (
+                <div className="empty-wallet-container">
+                  <div className="empty-wallet">
+                    <h1>Todavía no tenés entradas adquiridas</h1>
+                    <Link to="/tickets/purchase">
+                      <SecondaryButton text="Ver entradas" />
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="wallet-ticket-list">
+                  {tickets.map((ticket) => (
+                    <Link to={`/ticket/${ticket.id}`}>
+                      <CompactTicketView
+                        img={ticket.event.img || Party1}
+                        eventDate="30/05 Aldea ME Press.:"
+                        eventName={ticket.event.name}
+                      />
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
       <MainNavbarMobile />
     </Layout>
   );

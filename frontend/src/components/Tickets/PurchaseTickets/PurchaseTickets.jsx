@@ -25,6 +25,7 @@ const PurchaseTickets = () => {
       setTickets(response.data.data);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Error al obtener los tickets:", error);
     }
   };
@@ -69,7 +70,7 @@ const PurchaseTickets = () => {
               <table>
                 <thead>
                   <tr className="desktop-only">
-                    <th>Vendedor</th>
+                    <th >Vendedor</th>
                     <th>Evento</th>
                     <th>Precio</th>
                     <th>Método de pago</th>
@@ -77,11 +78,19 @@ const PurchaseTickets = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {tickets.map((ticket) => (
-                    <tr key={ticket.id}>
-                      <Ticket ticket={ticket} />
-                    </tr>
-                  ))}
+                  {!tickets.length ? (
+                    <>
+                      
+                    </>
+                  ) : (
+                    <>
+                    {tickets.map((ticket) => (
+                      <tr key={ticket.id}>
+                        <Ticket ticket={ticket} />
+                      </tr>
+                    ))}
+                  </>
+                  )}
                 </tbody>
               </table>
             </div>
