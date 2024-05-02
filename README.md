@@ -56,6 +56,8 @@ Join us today and experience the convenience of TROCA! 🎵🎟️
   - https://troca-prod.onrender.com/swagger-ui
 
 ## PROD Server
+![vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
 - Run maven install to build the project
 - Run the following command to start the server
   - `mvn spring-boot:run`
